@@ -81,6 +81,9 @@ Field weakening, a technique used with 3-phase electric motors, is essential for
 
 Field weakening flux is calculated as follows: `initial + ("current speed" - "field weakening start speed") * (variable / 1000)`.
 
+**Warning**: Modifying field weakening settings without a deep understanding of the consequences can potentially lead to unstable or unsafe riding conditions. It's strongly recommended that you proceed with caution and, if unsure, consult with experts or seek guidance from the scooter hacking community or read articles on the matter.
+
+
 From my own experience and testing, I've found that keeping the initial value at 0 and adjusting the other parameters to achieve around 30-35A of requested flux leads to the best riding experience. Therefore, the ideal outcome should fall within that range.
 
 These calculations and principles have been used to configure the examples for the scooter models listed in this guide.
