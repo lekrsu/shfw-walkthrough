@@ -31,7 +31,7 @@ To install SHFW, follow these steps:
    - Ensure you have the correct scooter model.
    - Open the utility app, connect to the scooter.
    - Press "Load Custom" and select SHFW.
-   - For G30, it's recommended to select the 187 DRV base.
+      - For G30, it's recommended to select the 187 DRV base.
 
 ### Usage
 
@@ -75,16 +75,32 @@ The rest of the configurations are up to you. Feel free to explore and set up pr
 
 ### Field Weakening Calculations and Logic
 
-Field weakening is a technique commonly used with 3-phase electric motors to achieve higher speeds. However, it's important to note that implementing this technique comes at a cost – it can lead to increased battery usage, higher motor temperatures, and additional expenses.
+#### What is Field Weakening?
 
-Field weakening flux is calculated as follows: `initial + ("current speed" - "field weakening start speed") * (variable / 1000)`.
+Field weakening is a technique commonly used with 3-phase electric motors to achieve higher speeds in electric vehicles like scooters. It allows the motor to operate beyond its rated voltage and rpm, which can result in increased top speed. However, implementing field weakening comes with trade-offs, including increased battery usage, higher motor temperatures, and potential additional expenses.
 
-**Warning**: Modifying field weakening settings without a deep understanding of the consequences can potentially lead to unstable or unsafe riding conditions. It's strongly recommended that you proceed with caution and, if unsure, consult with experts or seek guidance from the scooter hacking community or read articles on the matter.
+#### Field Weakening Flux Calculation
+
+Field weakening is often achieved by adjusting the flux (magnetic field strength) in the motor. The calculation for field weakening flux is as follows:
+
+field weakening flux = initial + ("current speed" - "field weakening start speed") * (variable / 1000)
 
 
-From my own experience and testing, I've found that keeping the initial value at 0 and adjusting the other parameters to achieve around 30-35A of requested flux leads to the best riding experience. Therefore, the ideal outcome should fall within that range.
+- `initial`: The initial value of the field weakening flux.
+- `"current speed"`: The current speed of the scooter.
+- `"field weakening start speed"`: The speed at which field weakening should start.
+- `variable`: A parameter that influences the rate of flux increase.
 
-These calculations and principles have been used to configure the examples for the scooter models listed in this guide.
+
+#### Recommended Field Weakening Settings
+
+From the author's experience and testing, it's recommended to keep the initial value at 0 and adjust the other parameters to achieve around 30-35A of requested flux. This range is believed to provide the best riding experience while balancing performance and safety.
+
+#### Application to Scooter Models
+
+The calculations and principles discussed in this section have been applied to configure the examples for the scooter models listed in this guide. These settings can vary depending on the specific scooter model and user preferences.
+
+
 
 
 ### License
