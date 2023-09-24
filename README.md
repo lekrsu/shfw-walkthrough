@@ -32,6 +32,7 @@ To install SHFW, follow these steps:
    - Open the utility app, connect to the scooter.
    - Press "Load Custom" and select SHFW.
       - For G30, it's recommended to select the 187 DRV base.
+      - If you have the new G30 motor then select the new motor option under the system config tab as well.
 
 ### Usage
 
@@ -94,7 +95,7 @@ field weakening flux = initial + ("current speed" - "field weakening start speed
 
 #### Recommended Field Weakening Settings
 
-From the author's experience and testing, it's recommended to keep the initial value at 0 and adjust the other parameters to achieve around 30-35A of requested flux. This range is believed to provide the best riding experience while balancing performance and safety.
+As per my experience and testing, it's recommended to keep the initial value at 0 and adjust the other parameters to achieve around 30-35A of requested flux. This range is believed to provide the best riding experience while balancing performance and safety.
 
 #### Application to Scooter Models
 
