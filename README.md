@@ -114,4 +114,4 @@ Please review the [LICENSE](LICENSE) file for detailed terms and conditions.
 
 ### Author Information
 
-This guide has been written by **lekrsu**, who can be reached on Discord with the tag `lekrsu` and on Telegram with the username `lekrsu`. The content of this guide is based on their own findings and logical reasoning, making it a valuable resource for understanding SHFW configurations and optimizing your scooter's performance.
+This guide has been written by **lekrsu**, who can be reached on Discord with the tag `lekrsu` and on Telegram with the username `lekrsu`. You're welcome to send a pull request if you feel like the information needs correction.
