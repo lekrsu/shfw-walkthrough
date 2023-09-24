@@ -41,7 +41,7 @@ Please be aware that the information provided below is intended for practical us
 
 To achieve the top speed for Ninebot G30, follow these configurations:
 
-1. Set sport DPC curve to 30A with a flat curve.
+1. Set sport DPC curve to 30A with a flat curve (0.0 linear).
    - Configure the other modes as desired, preferably lower than sport for logical reasons.
    - Set the brake to 40A with a flat curve.
 
@@ -55,7 +55,7 @@ To achieve the top speed for Ninebot G30, follow these configurations:
 
 For Xiaomi Pro 2, use the following configurations:
 
-1. Sport mode, DPC, 27A, flat curve.
+1. Sport mode, DPC, 27A, flat curve (0.0 linear).
 
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
@@ -65,11 +65,11 @@ For Xiaomi Pro 2, use the following configurations:
 
 For Xiaomi Essential, Lite, 1S, and 3 models, use these configurations:
 
-1. Sport mode, DPC, 20A, flat curve.
+1. Sport mode, DPC, 20A, flat curve (0.0 linear).
 
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
-   - Configure as follows: 15 km/h, 0A, 1000.
+   - Configure as follows: 13 km/h, 0A, 1000.
    
 The rest of the configurations are up to you. Feel free to explore and set up profiles according to your preferences. Your imagination is the limit.
 
