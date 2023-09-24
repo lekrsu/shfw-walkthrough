@@ -35,6 +35,8 @@ To install SHFW, follow these steps:
 
 ### Usage
 
+Please be aware that the information provided below is intended for practical use, but it should be used with caution.
+
 #### [Ninebot G30](#ninebot-g30)
 
 To achieve the top speed for Ninebot G30, follow these configurations:
@@ -73,7 +75,7 @@ The rest of the configurations are up to you. Feel free to explore and set up pr
 
 ### Field Weakening Calculations and Logic
 
-Field weakening, a technique used with 3-phase electric motors, is essential for optimizing the flux and performance of your scooter. In a nutshell:
+Field weakening is a technique commonly used with 3-phase electric motors to achieve higher speeds. However, it's important to note that implementing this technique comes at a cost – it can lead to increased battery usage, higher motor temperatures, and additional expenses.
 
 Field weakening flux is calculated as follows: `initial + ("current speed" - "field weakening start speed") * (variable / 1000)`.
 
@@ -87,9 +89,11 @@ These calculations and principles have been used to configure the examples for t
 
 ### License
 
-This project is licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
 
 Please review the [LICENSE](LICENSE) file for detailed terms and conditions.
+
+**Note**: The MIT License is applied to this project. While it allows for wide use and modification, it comes with no warranties or guarantees. The project contributors and maintainers are not responsible for any issues, damages, or liabilities that may arise from the use of this software.
 
 ### Author Information
 
