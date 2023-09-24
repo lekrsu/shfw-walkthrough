@@ -87,7 +87,9 @@ These calculations and principles have been used to configure the examples for t
 
 ### License
 
-This project is licensed under the [LICENSE](LICENSE) - (Specify the license you choose for your project).
+This project is licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](LICENSE).
+
+Please review the [LICENSE](LICENSE) file for detailed terms and conditions.
 
 ### Author Information
 
