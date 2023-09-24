@@ -81,7 +81,7 @@ Field weakening is a technique commonly used with 3-phase electric motors to ach
 
 #### Field Weakening Flux Calculation
 
-Field weakening is often achieved by adjusting the flux (magnetic field strength) in the motor. The calculation for field weakening flux is as follows:
+The calculation for field weakening flux is as follows:
 
 field weakening flux = initial + ("current speed" - "field weakening start speed") * (variable / 1000)
 
