@@ -105,9 +105,12 @@ The calculations and principles discussed in this section have been applied to c
 #### ADC modding and such (upcoming)
 
 130k original 10s->12s (13s not really safe but works)
+
 160k 13s
 200k 15s
+
 240k 16-17s
+
 270k 20s
 
 
