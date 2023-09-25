@@ -54,7 +54,7 @@ To achieve the top speed for Ninebot G30, follow these configurations:
 
 #### [Xiaomi Pro 2](#xiaomi-pro-2)
 
-For Xiaomi Pro 2, use the following configurations:
+For Xiaomi Pro 2 and mi3, use the following configurations:
 
 1. Sport mode, DPC, 27A, flat curve (0.0 linear).
 
@@ -64,7 +64,7 @@ For Xiaomi Pro 2, use the following configurations:
 
 #### [Xiaomi Essential, Lite, 1S, 3](#xiaomi-essential-lite-1s-3)
 
-For Xiaomi Essential, Lite, 1S, and 3 models, use these configurations:
+For Xiaomi Essential and Lite, use these configurations:
 
 1. Sport mode, DPC, 20A, flat curve (0.0 linear).
 
