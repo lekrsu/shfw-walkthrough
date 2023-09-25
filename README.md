@@ -102,6 +102,13 @@ As per my experience and testing, it's recommended to keep the initial value at 
 The calculations and principles discussed in this section have been applied to configure the examples for the scooter models listed in this guide. These settings can vary depending on the specific scooter model and user preferences.
 
 
+#### ADC modding and such (upcoming)
+
+130k original 10s->12s (13s not really safe but works)
+160k 13s
+200k 15s
+240k 16-17s
+270k 20s
 
 
 ### License
