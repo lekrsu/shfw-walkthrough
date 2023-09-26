@@ -101,6 +101,12 @@ As per my experience and testing, it's recommended to keep the initial value at 
 
 The calculations and principles discussed in this section have been applied to configure the examples for the scooter models listed in this guide. These settings can vary depending on the specific scooter model and user preferences.
 
+#### Upcoming features
+- Brake Boost
+- Acceleration Boost
+- Further customization to:
+  - Field weakening
+  - Phase limits
 
 #### ADC modding and such (upcoming)
 
