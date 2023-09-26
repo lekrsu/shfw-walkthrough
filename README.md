@@ -13,6 +13,8 @@ SHFW is a custom firmware available for flashing via the Scooterhacking Utility 
   - [Ninebot G30](#ninebot-g30)
   - [Xiaomi Pro 2](#xiaomi-pro-2)
   - [Xiaomi Essential, Lite, 1S, 3](#xiaomi-essential-lite-1s-3)
+- [Field Weakening Calculations and Logic](#field-weakening-calculations-and-logic)
+
 
 ### Installation
 
@@ -96,9 +98,6 @@ field weakening flux = initial + ("current speed" - "field weakening start speed
 #### Recommended Field Weakening Settings
 
 As per my experience and testing, it's recommended to keep the initial value at 0 and adjust the other parameters to achieve around 30-35A of requested flux. This range is believed to provide the best riding experience while balancing performance and safety.
-
-#### Application to Scooter Models
-
 The calculations and principles discussed in this section have been applied to configure the examples for the scooter models listed in this guide. These settings can vary depending on the specific scooter model and user preferences.
 
 #### Upcoming features
@@ -108,11 +107,12 @@ The calculations and principles discussed in this section have been applied to c
   - Field weakening
   - Phase limits
 
-#### ADC modding and such (upcoming)
+#### ADC modding info (upcoming)
 
 130k original 10s->12s (13s not really safe but works)
 
 160k 13s
+
 200k 15s
 
 240k 16-17s
