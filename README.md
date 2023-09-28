@@ -102,6 +102,8 @@ The calculations and principles discussed in this section have been applied to c
 
 #### Upcoming Features
 
+*To clarify, none of these features mentioned below are in any way guaranteed to be kept in the final release or guaranteed to be kept working the way described below.*
+
 - **Brake Boost**
   - Brake boost is designed to significantly enhance e-brake performance, delivering powerful and responsive braking capabilities. However, it's essential to exercise caution when utilizing this feature. Excessive use of brake boost can lead to wheel lock-up, which, in turn, can have a detrimental impact on overall braking distance and stability. This situation is particularly concerning for riders who need to maintain control during emergency braking scenarios. Furthermore, forward-wheel-drive (FWD) scooter users, such as Xiaomi riders, should be especially mindful when applying brake boost. Incorrect usage of this setting can potentially result in the scooter's front wheel lifting, leading to a front flip if not managed properly. Striking a balance between increased braking power and maintaining safe and controlled braking performance is paramount.
 
