@@ -11,8 +11,8 @@ SHFW is a custom firmware available for flashing via the Scooterhacking Utility 
 - [Installation](#installation)
 - [Usage](#usage)
   - [Ninebot G30](#ninebot-g30)
-  - [Xiaomi Pro 2](#xiaomi-pro-2)
-  - [Xiaomi Essential, Lite, 1S, 3](#xiaomi-essential-lite-1s-3)
+  - [Xiaomi Pro 2, 3](#xiaomi-pro-2-3)
+  - [Xiaomi Essential, Lite, 1S](#xiaomi-essential-lite-1s)
 - [Field Weakening Calculations and Logic](#field-weakening-calculations-and-logic)
 
 
@@ -24,7 +24,7 @@ To install SHFW, follow these steps:
 
 2. Supported Scooter Models:
 
-   - **Ninebot G30**: You can flash this firmware if the DRV version is at 1.7.0 or below. For DRV versions above 1.7.0, you'll need an ST-link. Refer to [https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC](https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC) for more information.
+   - **Ninebot G0**: You can flash this firmware if the DRV version is at 1.7.0 or below. For DRV versions above 1.7.0, you'll need an ST-link. Refer to [https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC](https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC) for more information.
 
    - **Xiaomi Scooters**: If the BLE version is at or above 1.5.7, you'll need an ST-link. There are online guides available for this process.
 
@@ -54,7 +54,7 @@ To achieve the top speed for Ninebot G30, follow these configurations:
 
 3. Default tire size for G30 models are 10", but set 9.3" to get the dash speed to match GPS speed.
 
-#### [Xiaomi Pro 2](#xiaomi-pro-2)
+#### [Xiaomi Pro 2, 3](#xiaomi-pro-2-3)
 
 For Xiaomi Pro 2 and mi3, use the following configurations:
 
@@ -64,7 +64,7 @@ For Xiaomi Pro 2 and mi3, use the following configurations:
    - Enable field weakening for sport mode.
    - Configure as follows: 20 km/h, 0A, 1300.
 
-#### [Xiaomi Essential, Lite, 1S, 3](#xiaomi-essential-lite-1s-3)
+#### [Xiaomi Essential, Lite, 1S](#xiaomi-essential-lite-1s)
 
 For Xiaomi Essential and Lite, use these configurations:
 
