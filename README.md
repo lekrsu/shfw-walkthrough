@@ -100,12 +100,22 @@ field weakening flux = initial + ("current speed" - "field weakening start speed
 As per my experience and testing, it's recommended to keep the initial value at 0 and adjust the other parameters to achieve around 30-35A of requested flux. This range is believed to provide the best riding experience while balancing performance and safety.
 The calculations and principles discussed in this section have been applied to configure the examples for the scooter models listed in this guide. These settings can vary depending on the specific scooter model and user preferences.
 
-#### Upcoming features
-- Brake Boost
-- Acceleration Boost
-- Further customization to:
-  - Field weakening
-  - Phase limits
+#### Upcoming Features
+
+- **Brake Boost**
+  - Brake boost is designed to significantly enhance e-brake performance, delivering powerful and responsive braking capabilities. However, it's essential to exercise caution when utilizing this feature. Excessive use of brake boost can lead to wheel lock-up, which, in turn, can have a detrimental impact on overall braking distance and stability. This situation is particularly concerning for riders who need to maintain control during emergency braking scenarios. Furthermore, forward-wheel-drive (FWD) scooter users, such as Xiaomi riders, should be especially mindful when applying brake boost. Incorrect usage of this setting can potentially result in the scooter's front wheel lifting, leading to a front flip if not managed properly. Striking a balance between increased braking power and maintaining safe and controlled braking performance is paramount.
+
+- **Acceleration Boost**
+  - Acceleration boost provides additional torque in low RPM scenarios, significantly enhancing the scooter's overall performance and acceleration. This feature delivers an exhilarating and responsive riding experience. Users are encouraged to experiment with this setting to determine the level of acceleration that best aligns with their preferences. However, it's crucial to exercise caution, particularly in situations where traction and control are critical.
+
+- **Further Customization**
+  - *Field Weakening*
+    - Flux Til Start: This setting provides a static amount of flux up until the field weakening activation speed. It can offer additional acceleration speed at the expense of slight vibration and increased battery usage.
+    - The option to dynamically trade flux current to torque current has also been added. Mostly meant for those that want flux for acceleration purposes instead of maxing out top speed.
+
+  - *Phase Limits*
+    - Phase limits are customizable for torque and flux. The default settings are 65A for torque and 30A for flux.
+
 
 #### ADC modding info (upcoming)
 
