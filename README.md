@@ -66,9 +66,9 @@ For Xiaomi Pro 2 and mi3, use the following configurations:
 
 #### [Xiaomi Essential, Lite, 1S](#xiaomi-essential-lite-1s)
 
-For Xiaomi Essential and Lite, use these configurations:
+For Xiaomi Essential Lite, use these configurations:
 
-1. Sport mode, DPC, 20A, flat curve (0.0 linear).
+1. Sport mode, DPC, 16A, flat curve (0.0 linear).
 
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
