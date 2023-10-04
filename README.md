@@ -119,17 +119,16 @@ The calculations and principles discussed in this section have been applied to c
     - Phase limits are customizable for torque and flux. The default settings are 65A for torque and 30A for flux.
 
 
-#### ADC modding info (upcoming)
+#### ADC modding info
 
-130k original 10s->12s (13s not really safe but works)
+In the context of ADC modding, you can utilize the following interactive calculator to help with your calculations. This calculator is designed for dark mode, ensuring readability in various environments.
 
-160k 13s
+<div align="center">
+  <iframe src="https://lekrsu.github.io/shfw-walkthrough/" width="100%" height="300"></iframe>
+</div>
 
-200k 15s
 
-240k 16-17s
-
-270k 20s
+**Note**: Make sure to adjust Radc, as it plays a significant role in ADC modding.
 
 
 ### License
