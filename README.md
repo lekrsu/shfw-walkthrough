@@ -124,7 +124,7 @@ The calculations and principles discussed in this section have been applied to c
 In the context of ADC modding, you can utilize the following interactive calculator to help with your calculations. This calculator is designed for dark mode, ensuring readability in various environments.
 
 <div align="center">
-  <iframe src="https://lekrsu.github.io/shfw-walkthrough/" width="100%" height="300"></iframe>
+  <iframe src="https://lekrsu.github.io/shfw-walkthrough/calculator/" width="100%" height="300"></iframe>
 </div>
 
 
