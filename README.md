@@ -119,9 +119,9 @@ The calculations and principles discussed in this section have been applied to c
     - Phase limits are customizable for torque and flux. The default settings are 65A for torque and 30A for flux.
 
 
-#### ADC modding info
+#### ADC modding info (G30)
 
-In the context of ADC modding, you can utilize the following interactive calculator to help with your calculations. This calculator is designed for dark mode, ensuring readability in various environments. Special thanks to Lothean for providing valuable information on the radc logic.
+Special thanks to Lothean for providing valuable information on the radc logic.
 
 [Open Calculator](https://lekrsu.github.io/shfw-walkthrough/calculator/)
 
