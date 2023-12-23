@@ -55,6 +55,7 @@ To achieve the top speed for Ninebot G30, follow these configurations:
 1. Set sport DPC curve to 30A with a flat curve (0.0 linear).
    - Configure the other modes as desired, preferably lower than sport for logical reasons.
    - Set the brake to 40A with a flat curve.
+   - Set speed limit to off / 0.
 
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
