@@ -42,6 +42,8 @@ To install SHFW, follow these steps:
       - For G30, it's recommended to select the 187 DRV base.
       - If you have the new G30 motor then select the new motor option under the system config tab as well.
 
+   **Note**: THe number in the firmware name indicates the base DRV.
+
 ### Usage
 
 Please be aware that the information provided below is intended for practical use, but it should be used with caution.
