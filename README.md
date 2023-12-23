@@ -24,9 +24,15 @@ To install SHFW, follow these steps:
 
 2. Supported Scooter Models:
 
-   - **Ninebot G30**: You can flash this firmware if the DRV version is at 1.7.0 or below. For DRV versions above 1.7.0, you'll need an ST-link. Refer to [https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC](https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC) for more information.
+   - **Ninebot G30**: You can flash this firmware if the DRV version is at 1.7.0 or below. If your DRV is above 1.7.0 and not higher than 1.7.3, you need to select "Attempt Downgrade". For DRV versions above 1.7.3, you'll need an ST-link. Refer to [https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC](https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC) for more information.
 
-   - **Xiaomi Scooters**: If the BLE version is at or above 1.5.7, you'll need an ST-link. There are online guides available for this process.
+   - **Xiaomi Scooters**: If the BLE version is at or above 1.5.0, you'll need an ST-link for the dashboard. There are online guides available for this process.
+
+   - **Ninebot EsX and Ex Series**: You can flash this firmware if the DRV version is below 2.7.0. Else you will need to use a st-link. There are online guides available for this process.
+
+   - **Ninebot F-Series**: You can flash this firmware if the DRV version is below 5.7.0. Else you will need to use a st-link. There are online guides available for this process.
+
+   - **Ninebot D-Series**: There is an experimental support for D-Series using the F-Series firmware. It's not known at which DRV version you will need a St-link. The guides should be identical to the F-Series.
 
 3. Flash Procedure:
 
@@ -35,6 +41,8 @@ To install SHFW, follow these steps:
    - Press "Load Custom" and select SHFW.
       - For G30, it's recommended to select the 187 DRV base.
       - If you have the new G30 motor then select the new motor option under the system config tab as well.
+
+   **Note**: THe number in the firmware name indicates the base DRV.
 
 ### Usage
 
@@ -47,6 +55,7 @@ To achieve the top speed for Ninebot G30, follow these configurations:
 1. Set sport DPC curve to 30A with a flat curve (0.0 linear).
    - Configure the other modes as desired, preferably lower than sport for logical reasons.
    - Set the brake to 40A with a flat curve.
+   - Set speed limit to off / 0.
 
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
@@ -121,11 +130,13 @@ The calculations and principles discussed in this section have been applied to c
 
 #### ADC modding info (G30)
 
-Special thanks to Lothean for providing valuable information on the radc logic.
+Special thanks to Lothean for providing valuable information on the R_adc logic.
 
 [Open Calculator](https://lekrsu.github.io/shfw-walkthrough/calculator/)
 
-**Note**: Make sure to adjust Radc, as it plays a significant role in ADC modding.
+**Note1**: Make sure to adjust R_adc, as it plays a significant role in ADC modding.
+**Note2**: You can also meassure your battery voltage and then increase the divider voltage until the system voltage reading matches your previous meassuring.
+**Note3**: You only need to touch this setting once you changed the resistors on the esc. 
 
 
 ### License
