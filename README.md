@@ -130,11 +130,13 @@ The calculations and principles discussed in this section have been applied to c
 
 #### ADC modding info (G30)
 
-Special thanks to Lothean for providing valuable information on the radc logic.
+Special thanks to Lothean for providing valuable information on the R_adc logic.
 
 [Open Calculator](https://lekrsu.github.io/shfw-walkthrough/calculator/)
 
-**Note**: Make sure to adjust Radc, as it plays a significant role in ADC modding.
+**Note1**: Make sure to adjust R_adc, as it plays a significant role in ADC modding.
+**Note2**: You can also meassure your battery voltage and then increase the divider voltage until the system voltage reading matches your previous meassuring.
+**Note3**: You only need to touch this setting once you changed the resistors on the esc. 
 
 
 ### License
