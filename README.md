@@ -103,6 +103,12 @@ field weakening flux = initial + ("current speed" - "field weakening start speed
 - `"field weakening start speed"`: The speed at which field weakening should start.
 - `variable`: A parameter that influences the rate of flux increase.
 
+Here's a graph of the flux current applied at various speeds comparing the following 2 setups:
+- 7A initial current, 24km/h start speed, 1500mA/km/h variable current
+- 0A initial current, 24km/h start speed, 1500mA/km/h variable current
+
+![graph comparing the above mentioned field weakening setups](/images/comparison_graph.png)
+
 
 #### Recommended Field Weakening Settings
 
