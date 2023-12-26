@@ -1,5 +1,3 @@
-# shfw-walkthrough
-
 ## Quick SHFW Configuration Walkthrough
 
 ### Project Description
