@@ -46,7 +46,7 @@ To install SHFW, follow these steps:
 
 ### Usage
 
-Please be aware that the information provided below is intended for practical use, but it should be used with caution.
+Please be aware that the information provided below is intended for practical use, but it should be used with caution. Remember, field weakening in it's nature will not be efficient.
 
 #### [Ninebot G30](#ninebot-g30)
 
