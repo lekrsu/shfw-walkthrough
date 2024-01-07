@@ -139,7 +139,7 @@ Special thanks to Lothean for providing valuable information on the R_adc logic.
 [Open Calculator](https://lekrsu.github.io/shfw-walkthrough/calculator/)
 
 **Note1**: Make sure to adjust R_adc, as it plays a significant role in ADC modding.
-**Note2**: You can also meassure your battery voltage and then increase the divider voltage until the system voltage reading matches your previous meassuring.
+**Note2**: You can also measure your battery voltage and then increase the divider voltage until the system voltage reading matches your previous meassuring.
 **Note3**: You only need to touch this setting once you changed the resistors on the esc. 
 
 
