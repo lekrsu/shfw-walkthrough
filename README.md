@@ -117,6 +117,8 @@ The calculations and principles discussed in this section have been applied to c
 
 *To clarify, none of these features mentioned below are in any way guaranteed to be kept in the final release or guaranteed to be kept working the way described below.*
 
+- **Adjustable PWM Frequency for Motor**: Set the motor frequency from 4kHz to 24kHz for reduced acoustic noise and improved motor performance, with a note on potential efficiency changes and increased switching losses.
+
 - **Brake Boost**
   - Brake boost is designed to significantly enhance e-brake performance, delivering powerful and responsive braking capabilities. However, it's essential to exercise caution when utilizing this feature. Excessive use of brake boost can lead to wheel lock-up, which, in turn, can have a detrimental impact on overall braking distance and stability. This situation is particularly concerning for riders who need to maintain control during emergency braking scenarios. Furthermore, front-wheel-drive (FWD) scooter users, such as Xiaomi riders, should be especially mindful when applying brake boost. Incorrect usage of this setting can potentially result in the scooter's back wheel lifting, leading to a front flip if not managed properly. Striking a balance between increased braking power and maintaining safe and controlled braking performance is paramount.
 
