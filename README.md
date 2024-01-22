@@ -145,6 +145,18 @@ Special thanks to Lothean for providing valuable information on the R_adc logic.
 **Note3**: You only need to touch this setting once you changed the resistors on the esc. 
 
 
+## :star: Contributors
+
+- **[lekrsu](https://github.com/lekrsu)** :hammer: - Main contributor and architect.
+- **[Paul](https://github.com/paulederbaus)** :pencil: - Added valuable insights and documentation.
+- **[BXLR](https://github.com/nopbxlr)** :rocket: - Instrumental in development, making everything possible. Kudos!
+- **[Edex](https://github.com/rasil1127)** :mag: - Provided critical support and logic validation.
+- **[Lex](https://github.com/LexNastin)** :camera: - Supplied essential images and visuals.
+- **[PureComedi](https://github.com/PureComedi)** :memo: - Ensured top-notch grammar and structural integrity.
+
+> A big thank you to everyone who has contributed to making this project a success! :heart:
+
+
 ### License
 
 This project is licensed under the [MIT License](LICENSE).
