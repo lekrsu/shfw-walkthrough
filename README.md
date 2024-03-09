@@ -1,17 +1,23 @@
 ## Quick SHFW Configuration Walkthrough
 
-### Project Description
-
 SHFW is a custom firmware available for flashing via the Scooterhacking Utility app. Configuring it might be challenging for new users. This guide aims to provide a quick and easy way to apply the important basics. The understanding aspect of all this can be overwhelming, but it will come as a side effect of your own testing and thinking as we can't do that for you.
 
-### Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Ninebot G30](#ninebot-g30)
-  - [Xiaomi Pro 2, 3](#xiaomi-pro-2-3)
-  - [Xiaomi Essential, Lite, 1S](#xiaomi-essential-lite-1s)
-- [Field Weakening Calculations and Logic](#field-weakening-calculations-and-logic)
+- [Quick SHFW Configuration Walkthrough](#quick-shfw-configuration-walkthrough)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Ninebot G30](#ninebot-g30)
+    - [Xiaomi Pro 2, 3](#xiaomi-pro-2-3)
+    - [Xiaomi Essential, Lite, 1S](#xiaomi-essential-lite-1s)
+  - [Field Weakening Calculations and Logic](#field-weakening-calculations-and-logic)
+    - [What is Field Weakening?](#what-is-field-weakening)
+    - [Field Weakening Flux Calculation](#field-weakening-flux-calculation)
+    - [Recommended Field Weakening Settings](#recommended-field-weakening-settings)
+  - [Custom batteries and BMS emulation](#custom-batteries-and-bms-emulation)
+    - [Upcoming Features](#upcoming-features)
+    - [ADC modding info (G30)](#adc-modding-info-g30)
+- [Contributors](#contributors)
+  - [License](#license)
+  - [Author Information](#author-information)
 
 
 ### Installation
@@ -113,7 +119,7 @@ Here's a graph of the flux current applied at various speeds comparing the follo
 As per my experience and testing, it's recommended to keep the initial value at 0 and adjust the other parameters to achieve around 30-35A of requested flux. This range is believed to provide the best riding experience while balancing performance and safety.
 The calculations and principles discussed in this section have been applied to configure the examples for the scooter models listed in this guide. These settings can vary depending on the specific scooter model and user preferences.
 
-#### Custom batteries and BMS emulation
+### Custom batteries and BMS emulation
 
 After installing a custom battery in specific scooter models, you might notice that the display no longer shows the battery charge percentage. This occurs because the scooter's original Battery Management System (BMS) uses a communication cable to provide this information, among other functions. As a workaround, BMS emulation can be employed. This method calculates the battery's charge level based purely on the system's voltage, a viable approach due to the linear relationship between voltage and charge state.
 
