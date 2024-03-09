@@ -113,6 +113,30 @@ Here's a graph of the flux current applied at various speeds comparing the follo
 As per my experience and testing, it's recommended to keep the initial value at 0 and adjust the other parameters to achieve around 30-35A of requested flux. This range is believed to provide the best riding experience while balancing performance and safety.
 The calculations and principles discussed in this section have been applied to configure the examples for the scooter models listed in this guide. These settings can vary depending on the specific scooter model and user preferences.
 
+#### Custom batteries and BMS emulation
+
+After installing a custom battery in specific scooter models, you might notice that the display no longer shows the battery charge percentage. This occurs because the scooter's original Battery Management System (BMS) uses a communication cable to provide this information, among other functions. As a workaround, BMS emulation can be employed. This method calculates the battery's charge level based purely on the system's voltage, a viable approach due to the linear relationship between voltage and charge state.
+
+For configuration, access the Utility app and navigate to the 'Config' tab. Here, you will find the BMS emulation option towards the bottom. In this section, enter the details of your battery, including the number of series groups and the total capacity. It's crucial to ensure the minimum and maximum cell group voltages are set correctly, ideally matching or being more conservative than those specified by your BMS. The voltage range for a Li-Ion cell typically spans from 3 to 4.2V, but your BMS may have specific cutoff limits for charging and discharging. Adjust these settings according to your BMS's limits or opt for the default if uncertain.
+
+Note, BMS emulation is necessary only if you've completely replaced the original battery. If you've added an additional pack in series with matching or higher capacity, or if you have another battery in parallel, BMS emulation is not required. In cases of parallel battery configurations, the primary adjustment needed is to disable the charging mode, which can be found in the system settings. This guide aims to facilitate a seamless transition to custom battery usage, ensuring optimal performance and compatibility.
+
+Given:
+- `V_min` = Minimum voltage of the battery pack when fully discharged.
+- `V_max` = Maximum voltage of the battery pack when fully charged.
+- `V_current` = Current voltage of the battery pack.
+
+The formula to calculate the battery percentage (`Battery_%`) is:
+
+Battery_% = ((V_current - V_min) / (V_max - V_min)) * 100
+
+Where:
+- `Battery_%` is the state of charge of the battery pack as a percentage.
+- `V_min` is the total voltage of the pack when all cells are at their minimum voltage.
+- `V_max` is the total voltage of the pack when all cells are at their maximum voltage.
+- `V_current` is the current total voltage of the battery pack.
+
+
 #### Upcoming Features
 
 *To clarify, none of these features mentioned below are in any way guaranteed to be kept in the final release or guaranteed to be kept working the way described below.*
@@ -145,16 +169,16 @@ Special thanks to Lothean for providing valuable information on the R_adc logic.
 **Note3**: You only need to touch this setting once you changed the resistors on the esc. 
 
 
-## :star: Contributors
+## Contributors
 
-- **[lekrsu](https://github.com/lekrsu)** :hammer: - Main contributor and architect.
-- **[Paul](https://github.com/paulederbaus)** :pencil: - Added valuable insights and documentation.
-- **[BXLR](https://github.com/nopbxlr)** :rocket: - Instrumental in development, making everything possible. Kudos!
-- **[Edex](https://github.com/rasil1127)** :mag: - Provided critical support and logic validation.
-- **[Lex](https://github.com/LexNastin)** :camera: - Supplied essential images and visuals.
-- **[PureComedi](https://github.com/PureComedi)** :memo: - Ensured top-notch grammar and structural integrity.
+- **[lekrsu](https://github.com/lekrsu)** - Main contributor and architect.
+- **[Paul](https://github.com/paulederbaus)** - Added valuable insights and documentation.
+- **[BXLR](https://github.com/nopbxlr)** - Instrumental in development, making everything possible. Kudos!
+- **[Edex](https://github.com/rasil1127)** - Provided critical support and logic validation.
+- **[Lex](https://github.com/LexNastin)** - Supplied essential images and visuals.
+- **[PureComedi](https://github.com/PureComedi)** - Ensured top-notch grammar and structural integrity.
 
-> A big thank you to everyone who has contributed to making this project a success! :heart:
+> A big thank you to everyone who has contributed to making this project a success!
 
 
 ### License
