@@ -141,21 +141,10 @@ Where:
 
 *To clarify, none of these features mentioned below are in any way guaranteed to be kept in the final release or guaranteed to be kept working the way described below.*
 
-- **Adjustable PWM Frequency for Motor**: Set the motor frequency from 4kHz to 24kHz for reduced acoustic noise and improved motor performance, with a note on potential efficiency changes and increased switching losses.
-
-- **Brake Boost**
-  - Brake boost is designed to significantly enhance e-brake performance, delivering powerful and responsive braking capabilities. However, it's essential to exercise caution when utilizing this feature. Excessive use of brake boost can lead to wheel lock-up, which, in turn, can have a detrimental impact on overall braking distance and stability. This situation is particularly concerning for riders who need to maintain control during emergency braking scenarios. Furthermore, front-wheel-drive (FWD) scooter users, such as Xiaomi riders, should be especially mindful when applying brake boost. Incorrect usage of this setting can potentially result in the scooter's back wheel lifting, leading to a front flip if not managed properly. Striking a balance between increased braking power and maintaining safe and controlled braking performance is paramount.
-
-- **Acceleration Boost**
-  - Acceleration boost provides additional torque in low RPM scenarios, significantly enhancing the scooter's overall performance and acceleration. This feature delivers an exhilarating and responsive riding experience. Users are encouraged to experiment with this setting to determine the level of acceleration that best aligns with their preferences. However, it's crucial to exercise caution, particularly in situations where traction and control are critical.
-
-- **Further Customization**
-  - *Field Weakening*
-    - Flux Til Start: This setting provides a static amount of flux up until the field weakening activation speed. It can offer additional acceleration speed at the expense of slight vibration and increased battery usage.
-    - The option to dynamically trade flux current to torque current has also been added. Mostly meant for those that want flux for acceleration purposes instead of maxing out top speed.
-
-  - *Phase Limits*
-    - Phase limits are customizable for torque and flux. The default settings are 65A for torque and 30A for flux.
+- Acceleration boost, more torque for low speeds.
+- Brake boost, increases effectiveness of e-brake. Will lock up your motor if needed.
+- Custom PWM range, 4-24khz range.
+- Phase amp display, mileage display (with comms).
 
 
 #### ADC modding info (G30)
