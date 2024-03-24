@@ -158,7 +158,7 @@ Where:
 
 #### ADC modding info (G30)
 
-Special thanks to Lothean for providing valuable information on the R_adc logic.
+Special thanks to BXLR for providing valuable information on the R_adc logic.
 
 [Open Calculator](https://lekrsu.github.io/shfw-walkthrough/calculator/)
 
