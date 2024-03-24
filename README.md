@@ -71,7 +71,7 @@ To achieve the top speed for Ninebot G30, follow these configurations:
 
 For Xiaomi Pro 2 and mi3, use the following configurations:
 
-1. Sport mode, DPC, 27A, flat curve (0.0 linear).
+1. Sport mode, DPC, 25A, flat curve (0.0 linear).
 
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
@@ -112,12 +112,6 @@ Here's a graph of the flux current applied at various speeds comparing the follo
 - 0A initial current, 24km/h start speed, 1500mA/km/h variable current
 
 ![graph comparing the above mentioned field weakening setups](/images/comparison_graph.png)
-
-
-#### Recommended Field Weakening Settings
-
-As per my experience and testing, it's recommended to keep the initial value at 0 and adjust the other parameters to achieve around 30-35A of requested flux. This range is believed to provide the best riding experience while balancing performance and safety.
-The calculations and principles discussed in this section have been applied to configure the examples for the scooter models listed in this guide. These settings can vary depending on the specific scooter model and user preferences.
 
 ### Custom batteries and BMS emulation
 
