@@ -1,6 +1,12 @@
 
 # Theme configuration
-theme: jekyll-theme-hacker
+remote_theme: jekyll/minima
+
+plugins:
+  - jekyll-remote-theme
+
+minima:
+  skin: auto
 
 # Site settings
 title: SHFW-Walkthrough
