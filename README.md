@@ -63,8 +63,7 @@ To achieve the top speed for Ninebot G30, follow these configurations:
 
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
-   - Configure as follows: 20 km/h, 0A, 1500.
-   - If it isn't reaching the performance you expected then consider settings initial amps to 5 instead.
+   - Configure as follows: 22 km/h, 5A, 1500.
 
 3. Default tire size for G30 models are 10", but set 9.3" to get the dash speed to match GPS speed.
 
@@ -76,7 +75,7 @@ For Xiaomi Pro 2 and mi3, use the following configurations:
 
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
-   - Configure as follows: 20 km/h, 0A, 1300.
+   - Configure as follows: 22 km/h, 5A, 1200.
 
 #### [Xiaomi Essential, Lite, 1S](#xiaomi-essential-lite-1s)
 
@@ -86,9 +85,9 @@ For Xiaomi Essential Lite, use these configurations:
 
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
-   - Configure as follows: 13 km/h, 0A, 1000.
+   - Configure as follows: 15 km/h, 3A, 1000.
    
-The rest of the configurations are up to you. Feel free to explore and set up profiles according to your preferences. Your imagination is the limit.
+The rest of the configurations are up to you. Feel free to explore and set up profiles according to your preferences.If it isn't reaching the performance you expected then consider fine-tuning it to your liking.
 
 ### Field Weakening Calculations and Logic
 
