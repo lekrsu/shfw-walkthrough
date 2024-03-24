@@ -5,13 +5,13 @@ SHFW is a custom firmware available for flashing via the Scooterhacking Utility 
 - [Quick SHFW Configuration Walkthrough](#quick-shfw-configuration-walkthrough)
   - [Installation](#installation)
   - [Usage](#usage)
+  - [Peak Current Draw Calculator](#peak-current-draw-calculator)
     - [Ninebot G30](#ninebot-g30)
     - [Xiaomi Pro 2, 3](#xiaomi-pro-2-3)
     - [Xiaomi Essential, Lite, 1S](#xiaomi-essential-lite-1s)
   - [Field Weakening Calculations and Logic](#field-weakening-calculations-and-logic)
     - [What is Field Weakening?](#what-is-field-weakening)
     - [Field Weakening Flux Calculation](#field-weakening-flux-calculation)
-    - [Recommended Field Weakening Settings](#recommended-field-weakening-settings)
   - [Custom batteries and BMS emulation](#custom-batteries-and-bms-emulation)
     - [Upcoming Features](#upcoming-features)
     - [ADC modding info (G30)](#adc-modding-info-g30)
@@ -52,6 +52,15 @@ To install SHFW, follow these steps:
 
 Please be aware that the information provided below is intended for practical use, but it should be used with caution. Remember, field weakening, because of its nature, will not be efficient.
 
+### Peak Current Draw Calculator
+
+- **Torque Amps Calculation**: Users can input their torque amps (\(I_q\)) to calculate the torque component accurately.
+- **Field Weakening Calculation**: By entering the initial flux in A, variable flux in mAh, current max speed in km/h, and start speed in km/h, the calculator determines the flux component (\(I_d\)), incorporating field weakening effects.
+- **Peak Current Draw**: With the input parameters, the calculator computes the peak current draw (\(I_{total}\)), providing essential insights into the system's maximum electrical demand.
+
+[**Try the Peak Current Draw Calculator**](https://lekrsu.github.io/shfw-walkthrough/logic/index.html) - A user-friendly tool designed for clarity and efficiency in calculating electrical parameters.
+
+
 #### [Ninebot G30](#ninebot-g30)
 
 To achieve the top speed for Ninebot G30, follow these configurations:
@@ -85,7 +94,7 @@ For Xiaomi Essential Lite, use these configurations:
 
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
-   - Configure as follows: 15 km/h, 3A, 1000.
+   - Configure as follows: 17 km/h, 5A, 1000.
    
 The rest of the configurations are up to you. Feel free to explore and set up profiles according to your preferences.If it isn't reaching the performance you expected then consider fine-tuning it to your liking.
 
