@@ -59,7 +59,12 @@ Please be aware that the information provided below is intended for practical us
 - **Peak Current Draw**: With the input parameters, the calculator computes the peak current draw (I_total), providing essential insights into the system's maximum electrical demand.
 
 
-[**Try the Peak Current Draw Calculator**](https://lekrsu.github.io/shfw-walkthrough/logic/index.html) - A user-friendly tool designed for clarity and efficiency in calculating electrical parameters.
+[**Try the Peak Current Draw Calculator**](https://lekrsu.github.io/shfw-walkthrough/logic/index.html) - A user-friendly tool designed for clarity and efficiency in calculating electrical parameters. Keep in mind, this is peak, not showing actual real life battery draw, but it helps visualize it.
+
+<p align="center">
+  <img src="images/I_total.png" width="95%" alt="I_total graph">
+  <em>Graph showing Torque 30A, initial 5A flux, with 100mA increments of variable flux, from the speeds 15 km/h and 25 km/h.</em>
+</p>
 
 
 #### [Ninebot G30](#ninebot-g30)
@@ -121,7 +126,11 @@ Here's a graph of the flux current applied at various speeds comparing the follo
 - 7A initial current, 24km/h start speed, 1500mA/km/h variable current
 - 0A initial current, 24km/h start speed, 1500mA/km/h variable current
 
-![graph comparing the above mentioned field weakening setups](/images/comparison_graph.png)
+<!-- ![graph comparing the above mentioned field weakening setups](/images/comparison_graph.png) -->
+
+<p align="center">
+  <img src="images/comparison_graph.png" width="95%" alt="Field weakening graph">
+</p>
 
 ### Custom batteries and BMS emulation
 
@@ -146,6 +155,9 @@ Where:
 - `V_max` is the total voltage of the pack when all cells are at their maximum voltage.
 - `V_current` is the current total voltage of the battery pack.
 
+<p align="center">
+  <img src="images/current.gif" width="75%" alt="Ant bms gif showing current use ">
+</p>
 
 #### Upcoming Features
 
