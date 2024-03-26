@@ -5,7 +5,7 @@ SHFW is a custom firmware available for flashing via the Scooterhacking Utility 
 - [Quick SHFW Configuration Walkthrough](#quick-shfw-configuration-walkthrough)
   - [Installation](#installation)
   - [Usage](#usage)
-    - [Peak Current Draw Calculator](#peak-current-draw-calculator)
+    - [Peak Current Draw Calculator Features](#peak-current-draw-calculator-features)
     - [Ninebot G30](#ninebot-g30)
     - [Xiaomi Pro 2, 3](#xiaomi-pro-2-3)
     - [Xiaomi Essential, Lite, 1S](#xiaomi-essential-lite-1s)
@@ -52,11 +52,12 @@ To install SHFW, follow these steps:
 
 Please be aware that the information provided below is intended for practical use, but it should be used with caution. Remember, field weakening, because of its nature, will not be efficient.
 
-#### Peak Current Draw Calculator
+#### Peak Current Draw Calculator Features
 
-- **Torque Amps Calculation**: Users can input their torque amps (\(I_q\)) to calculate the torque component accurately.
-- **Field Weakening Calculation**: By entering the initial flux in A, variable flux in mAh, current max speed in km/h, and start speed in km/h, the calculator determines the flux component (\(I_d\)), incorporating field weakening effects.
-- **Peak Current Draw**: With the input parameters, the calculator computes the peak current draw (\(I_{total}\)), providing essential insights into the system's maximum electrical demand.
+- **Torque Amps Calculation**: Users can input their torque amps (Iq) to calculate the torque component accurately.
+- **Field Weakening Calculation**: By entering the initial flux in A, variable flux in mAh, current max speed in km/h, and start speed in km/h, the calculator determines the flux component (Id), incorporating field weakening effects.
+- **Peak Current Draw**: With the input parameters, the calculator computes the peak current draw (I_total), providing essential insights into the system's maximum electrical demand.
+
 
 [**Try the Peak Current Draw Calculator**](https://lekrsu.github.io/shfw-walkthrough/logic/index.html) - A user-friendly tool designed for clarity and efficiency in calculating electrical parameters.
 
