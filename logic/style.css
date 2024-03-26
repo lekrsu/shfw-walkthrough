@@ -1,42 +1,57 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #121212;
-    color: #e0e0e0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    color: white;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .container {
     max-width: 600px;
-    width: 100%;
-    padding: 20px;
+    margin: 20px auto;
+    padding: 0 15px;
+    /* Add horizontal padding here */
+    box-sizing: border-box;
 }
 
 .input-section label {
     display: block;
-    margin: 10px 0 5px;
+    margin-top: 20px;
 }
 
-.input-section input {
+.input-section input,
+button {
     width: 100%;
+    /* Full width */
     padding: 10px;
     margin-bottom: 20px;
+    /* Spacing between elements */
     background-color: #333;
-    border: none;
-    color: #fff;
+    border: 1px solid #444;
+    /* Subtle border */
+    color: white;
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
 }
 
 button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
     cursor: pointer;
+    display: block;
+    /* Ensure it's block-level */
 }
 
-#result {
-    margin-top: 20px;
-}
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        /* Smaller margin on smaller screens */
+    }
+
+    /* Inputs and button fill the width minus the container's padding */
+    .input-section input,
+    button {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}   
