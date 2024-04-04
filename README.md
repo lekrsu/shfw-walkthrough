@@ -63,7 +63,7 @@ Please be aware that the information provided below is intended for practical us
 
 <p align="center">
   <img src="images/I_total.png" width="95%" alt="I_total graph">
-  <em>Graph showing Torque 30A, initial 5A flux, with 100mA increments of variable flux, from the speeds 15 km/h and 25 km/h.</em>
+  <center>Graph showing Torque 30A, initial 5A flux, with 100mA increments of variable flux, from the speeds 15 km/h and 25 km/h.</center>
 </p>
 
 
@@ -73,14 +73,15 @@ To achieve the top speed for Ninebot G30, follow these configurations:
 
 1. Set sport DPC curve to 30A with a flat curve (0.0 linear).
    - Configure the other modes as desired, preferably lower than sport for logical reasons.
-   - Set the brake to 40A with a flat curve.
-   - Set speed limit to off / 0.
+   - Keep the speed limit to off / 0.
 
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
-   - Configure as follows: 22 km/h, 5A, 1500.
+   - Configure as follows: 20 km/h, 0A, 1500.
 
 3. Default tire size for G30 models are 10", but set 9.3" to get the dash speed to match GPS speed.
+
+Additional information: Newer G30 BMS models might run firmware limited to 28A total battery current. These, will have worse performance compared to the older 40A current models.
 
 #### [Xiaomi Pro 2, 3](#xiaomi-pro-2-3)
 
@@ -90,17 +91,17 @@ For Xiaomi Pro 2 and mi3, use the following configurations:
 
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
-   - Configure as follows: 22 km/h, 5A, 1200.
+   - Configure as follows: 20 km/h, 0A, 1500.
 
 #### [Xiaomi Essential, Lite, 1S](#xiaomi-essential-lite-1s)
 
 For Xiaomi Essential Lite, use these configurations:
 
-1. Sport mode, DPC, 16A, flat curve (0.0 linear).
+1. Sport mode, DPC, 18A, flat curve (0.0 linear).
 
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
-   - Configure as follows: 17 km/h, 5A, 1000.
+   - Configure as follows: 14 km/h, 0A, 1000.
    
 The rest of the configurations are up to you. Feel free to explore and set up profiles according to your preferences.If it isn't reaching the performance you expected then consider fine-tuning it to your liking.
 
@@ -157,10 +158,10 @@ Where:
 
 <p align="center">
   <img src="images/current.gif" width="75%" alt="Ant bms gif showing current use ">
+  <center>Example of what I_total of 42A actually looks on a flat road while requesting 30A torque, 30A flux.</center>
 </p>
 
 #### Upcoming Features
-
 *To clarify, none of these features mentioned below are in any way guaranteed to be kept in the final release or guaranteed to be kept working the way described below.*
 
 - Acceleration boost, more torque for low speeds.
