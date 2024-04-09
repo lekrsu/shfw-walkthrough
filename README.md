@@ -101,7 +101,7 @@ For Xiaomi Essential Lite, use these configurations:
 
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
-   - Configure as follows: 14 km/h, 0A, 1000.
+   - Configure as follows: 15 km/h, 0A, 1500.
    
 The rest of the configurations are up to you. Feel free to explore and set up profiles according to your preferences.If it isn't reaching the performance you expected then consider fine-tuning it to your liking.
 
