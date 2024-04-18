@@ -1,5 +1,7 @@
 ## Quick SHFW Configuration Walkthrough
 
+### SHFW 3.7.0 is out, go test it out!
+
 SHFW is a custom firmware available for flashing via the Scooterhacking Utility app. Configuring it might be challenging for new users. This guide aims to provide a quick and easy way to apply the important basics. The understanding aspect of all this can be overwhelming, but it will come as a side effect of your own testing and thinking as we can't do that for you.
 
 - [Quick SHFW Configuration Walkthrough](#quick-shfw-configuration-walkthrough)
@@ -43,8 +45,8 @@ To install SHFW, follow these steps:
    - Ensure you have the correct scooter model.
    - Open the utility app, connect to the scooter.
    - Press "Load Custom" and select SHFW.
-      - For G30, it's recommended to select the 187 DRV base.
       - If you have the new G30 motor then select the new motor option under the system config tab as well.
+      - Enable "expert view" on the top right.
 
    **Note**: The number in the firmware name indicates the base DRV.
 
@@ -58,6 +60,7 @@ Please be aware that the information provided below is intended for practical us
 - **Field Weakening Calculation**: By entering the initial flux in A, variable flux in mAh, current max speed in km/h, and start speed in km/h, the calculator determines the flux component (Id), incorporating field weakening effects.
 - **Peak Current Draw**: With the input parameters, the calculator computes the peak current draw (I_total), providing essential insights into the system's maximum electrical demand.
 
+To customize these phase limits, check out the Iq and Id sliders under "Field Weakening".
 
 [**Try the Peak Current Draw Calculator**](https://lekrsu.github.io/shfw-walkthrough/logic/index.html) - A user-friendly tool designed for clarity and efficiency in calculating electrical parameters. Keep in mind, this is peak, not showing actual real life battery draw, but it helps visualize it.
 
@@ -66,7 +69,6 @@ Please be aware that the information provided below is intended for practical us
   <center>Graph showing Torque 30A, initial 5A flux, with 100mA increments of variable flux, from the speeds 15 km/h and 25 km/h.</center>
 </p>
 
-
 #### [Ninebot G30](#ninebot-g30)
 
 To achieve the top speed for Ninebot G30, follow these configurations:
@@ -74,12 +76,16 @@ To achieve the top speed for Ninebot G30, follow these configurations:
 1. Set sport DPC curve to 30A with a flat curve (0.0 linear).
    - Configure the other modes as desired, preferably lower than sport for logical reasons.
    - Keep the speed limit to off / 0.
+   - Acceleration boost, 100%.
+   - Brake boost, 50%.
 
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
    - Configure as follows: 20 km/h, 0A, 1500.
 
 3. Default tire size for G30 models are 10", but set 9.3" to get the dash speed to match GPS speed.
+
+4. Under Motor Settings, select 20 or 24khz.
 
 Additional information: Newer G30 BMS models might run firmware limited to 28A total battery current. These, will have worse performance compared to the older 40A current models.
 
@@ -88,20 +94,29 @@ Additional information: Newer G30 BMS models might run firmware limited to 28A t
 For Xiaomi Pro 2 and mi3, use the following configurations:
 
 1. Sport mode, DPC, 25A, flat curve (0.0 linear).
+   - Acceleration boost, 100%.
+   - Brake boost, 25%.
 
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
    - Configure as follows: 20 km/h, 0A, 1500.
+
+4. Under Motor Settings, select 20 or 24khz.
+
 
 #### [Xiaomi Essential, Lite, 1S](#xiaomi-essential-lite-1s)
 
 For Xiaomi Essential Lite, use these configurations:
 
 1. Sport mode, DPC, 18A, flat curve (0.0 linear).
-
+   - Acceleration boost, 100%.
+   - Brake boost, 25%.
+  
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
    - Configure as follows: 15 km/h, 0A, 1500.
+
+4. Under Motor Settings, select 20 or 24khz.
    
 The rest of the configurations are up to you. Feel free to explore and set up profiles according to your preferences.If it isn't reaching the performance you expected then consider fine-tuning it to your liking.
 
@@ -160,15 +175,6 @@ Where:
   <img src="images/current.gif" width="75%" alt="Ant bms gif showing current use ">
   <center>Example of what I_total of 42A actually looks on a flat road while requesting 30A torque, 30A flux.</center>
 </p>
-
-#### Upcoming Features
-*To clarify, none of these features mentioned below are in any way guaranteed to be kept in the final release or guaranteed to be kept working the way described below.*
-
-- Acceleration boost, more torque for low speeds.
-- Brake boost, increases effectiveness of e-brake. Will lock up your motor if needed.
-- Custom PWM range, 4-24khz range.
-- Phase amp display, mileage display (with comms).
-
 
 #### ADC modding info (G30)
 
