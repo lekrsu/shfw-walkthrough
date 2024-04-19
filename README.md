@@ -1,6 +1,8 @@
 ## Quick SHFW Configuration Walkthrough
 
-### SHFW 3.7.0 is out, go test it out!
+## SHFW 3.7.0 is out, go test it out!
+
+For a detailed list of new features and improvements in SHFW 3.7.0, see the [3.7.0 Changelog](#370-changelog).
 
 SHFW is a custom firmware available for flashing via the Scooterhacking Utility app. Configuring it might be challenging for new users. This guide aims to provide a quick and easy way to apply the important basics. The understanding aspect of all this can be overwhelming, but it will come as a side effect of your own testing and thinking as we can't do that for you.
 
@@ -68,6 +70,36 @@ To customize these phase limits, check out the Iq and Id sliders under "Field We
   <img src="images/I_total.png" width="95%" alt="I_total graph">
   <center>Graph showing Torque 30A, initial 5A flux, with 100mA increments of variable flux, from the speeds 15 km/h and 25 km/h.</center>
 </p>
+
+## 3.7.0 changelog
+
+### PWM Frequency Adjustment
+- **Range:** 4-24kHz
+- **Effects:** Modifies motor frequency, impacting sound and vibrations. Higher frequencies may result in slight losses, but these are generally minimal.
+
+### Acceleration Boost
+- **Purpose:** Enhances torque delivery at low RPMs.
+- **Setting:** Slider can be adjusted up to 100%.
+- **Recommendation:** It's advisable to set the slider to 100% for improved performance.
+
+### Brake Boost
+- **Purpose:** Increases the aggressiveness of the electronic brake.
+- **Range:** Adjustable from 0 to 100.
+- **Effect:** Significantly enhances braking force.
+- **Recommendation:** Adjust according to desired braking response.
+
+### Amps Display on Dash
+- **Modes:**
+  - **Battery Amps:** Displayed when BMS communications is plugged in.
+  - **Phase Amps:** Shown when using battery emulation.
+  - **Approximated Phase Amps:** Done when both emulation and flux measurement are utilized.
+- **Recommendation:** Select the display mode based on the configuration and diagnostic needs.
+
+### Id/Iq Control Sliders
+- **Purpose:** Allows for the adjustment of maximum phase limits for torque (Id) and flux (Iq).
+- **Recommendation:** Modify these settings if there is a need to customize torque and flux limits.
+
+For further details and troubleshooting, refer to the subsequent sections of this guide or contact support.
 
 #### [Ninebot G30](#ninebot-g30)
 
