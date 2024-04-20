@@ -150,8 +150,6 @@ For Xiaomi Essential Lite, use these configurations:
 
 4. Under Motor Settings, select 20 or 24khz.
    
-The rest of the configurations are up to you. Feel free to explore and set up profiles according to your preferences.If it isn't reaching the performance you expected then consider fine-tuning it to your liking.
-
 ### Field Weakening Calculations and Logic
 
 #### What is Field Weakening?
