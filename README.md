@@ -2,7 +2,7 @@
 
 ## SHFW 3.7.0 is out, go test it out!
 
-For a detailed list of new features and improvements in SHFW 3.7.0, see the [3.7.0 Changelog](#370-changelog).
+For a detailed list of new features and improvements in SHFW 3.7.0, see the [3.7.0 Changelog](#370-changelog). Make sure to reset SHFW settings after updating Utility and flashing 3.7.0.
 
 SHFW is a custom firmware available for flashing via the Scooterhacking Utility app. Configuring it might be challenging for new users. This guide aims to provide a quick and easy way to apply the important basics. The understanding aspect of all this can be overwhelming, but it will come as a side effect of your own testing and thinking as we can't do that for you.
 
