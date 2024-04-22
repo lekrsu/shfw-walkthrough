@@ -217,13 +217,13 @@ Special thanks to BXLR for providing valuable information on the R_adc logic.
 **Note3**: You only need to touch this setting once you changed the resistors on the esc. 
 
 
-## Contributors
+## Contributors to this repo
 
 - **[lekrsu](https://github.com/lekrsu)** - Main contributor and architect.
-- **[Paul](https://github.com/paulederbaus)** - Added valuable insights and documentation.
-- **[BXLR](https://github.com/nopbxlr)** - Instrumental in development, making everything possible. Kudos!
-- **[Edex](https://github.com/rasil1127)** - Provided critical support and logic validation.
-- **[Lex](https://github.com/LexNastin)** - Supplied essential images and visuals.
+- **[Paul](https://github.com/paulederbaus)** - Added valuable insights and documentation. Co-Dev of SHFW.
+- **[BXLR](https://github.com/nopbxlr)** - Main SHFW dev, making everything possible. Kudos!
+- **[Edex](https://github.com/rasil1127)** - Fact checked the guide logic.
+- **[Lex](https://github.com/LexNastin)** - Provided some graphs.
 - **[PureComedi](https://github.com/PureComedi)** - Ensured top-notch grammar and structural integrity.
 
 > A big thank you to everyone who has contributed to making this project a success!
