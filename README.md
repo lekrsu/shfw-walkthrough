@@ -1,6 +1,6 @@
 ## Quick SHFW Configuration Walkthrough
 
-## SHFW 3.7.0 is out, go test it out!
+## SHFW 3.7.1 is out, go test it out!
 
 For a detailed list of new features and improvements in SHFW 3.7.1, see the [3.7.1 Changelog](#371-changelog).
 
@@ -22,7 +22,6 @@ SHFW is a custom firmware available for flashing via the Scooterhacking Utility 
 - [Contributors](#contributors)
   - [License](#license)
   - [Author Information](#author-information)
-
 
 ### Installation
 
@@ -46,11 +45,10 @@ To install SHFW, follow these steps:
 
    - Ensure you have the correct scooter model.
    - Open the utility app, connect to the scooter.
-   - Press "Load Custom" and select SHFW.
+   - Press "Install/update SHFW" and select a version of the highest number.If there's only one, select that.
       - If you have the new G30 motor then select the new motor option under the system config tab as well.
       - Enable "expert view" on the top right.
-
-   **Note**: The number in the firmware name indicates the base DRV.
+   **Note**: If BLE/DRV is low enough to be supported, but fails to flash, then press "Attempt DRV downgrade" and press flash.
 
 ### Usage
 
@@ -135,7 +133,6 @@ For Xiaomi Pro 2 and mi3, use the following configurations:
 
 4. Under Motor Settings, select 20 or 24khz.
 
-
 #### [Xiaomi Essential, Lite, 1S](#xiaomi-essential-lite-1s)
 
 For Xiaomi Essential Lite, use these configurations:
@@ -161,7 +158,6 @@ Field weakening is a technique commonly used with 3-phase electric motors to ach
 The calculation for field weakening flux is as follows:
 
 field weakening flux = initial + ("current speed" - "field weakening start speed") * (variable / 1000)
-
 
 - `initial`: The initial value of the field weakening flux.
 - `"current speed"`: The current speed of the scooter.
@@ -216,7 +212,6 @@ Special thanks to BXLR for providing valuable information on the R_adc logic.
 **Note2**: You can also measure your battery voltage and then increase the divider voltage until the system voltage reading matches your previous meassuring.
 **Note3**: You only need to touch this setting once you changed the resistors on the esc. 
 
-
 ## Contributors to this repo
 
 - **[lekrsu](https://github.com/lekrsu)** - Main contributor and architect.
@@ -227,7 +222,6 @@ Special thanks to BXLR for providing valuable information on the R_adc logic.
 - **[PureComedi](https://github.com/PureComedi)** - Ensured top-notch grammar and structural integrity.
 
 > A big thank you to everyone who has contributed to making this project a success!
-
 
 ### License
 
