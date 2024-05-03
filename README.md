@@ -17,11 +17,10 @@ SHFW is a custom firmware available for flashing via the Scooterhacking Utility 
     - [What is Field Weakening?](#what-is-field-weakening)
     - [Field Weakening Flux Calculation](#field-weakening-flux-calculation)
   - [Custom batteries and BMS emulation](#custom-batteries-and-bms-emulation)
-    - [Upcoming Features](#upcoming-features)
     - [ADC modding info (G30)](#adc-modding-info-g30)
-- [Contributors](#contributors)
-  - [License](#license)
-  - [Author Information](#author-information)
+- [License](#license)
+- [Author Information](#author-information)
+
 
 ### Installation
 
@@ -212,17 +211,6 @@ Special thanks to BXLR for providing valuable information on the R_adc logic.
 **Note1**: Make sure to adjust R_adc, as it plays a significant role in ADC modding.
 **Note2**: You can also measure your battery voltage and then increase the divider voltage until the system voltage reading matches your previous meassuring.
 **Note3**: You only need to touch this setting once you changed the resistors on the esc. 
-
-## Contributors to this repo
-
-- **[lekrsu](https://github.com/lekrsu)** - Main contributor and architect.
-- **[Paul](https://github.com/paulederbaus)** - Added valuable insights and documentation. Co-Dev of SHFW.
-- **[BXLR](https://github.com/nopbxlr)** - Main SHFW dev, making everything possible. Kudos!
-- **[Edex](https://github.com/rasil1127)** - Fact checked the guide logic.
-- **[Lex](https://github.com/LexNastin)** - Provided some graphs.
-- **[PureComedi](https://github.com/PureComedi)** - Ensured top-notch grammar and structural integrity.
-
-> A big thank you to everyone who has contributed to making this project a success!
 
 ### License
 
