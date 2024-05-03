@@ -48,6 +48,7 @@ To install SHFW, follow these steps:
    - Press "Install/update SHFW" and select a version of the highest number.If there's only one, select that.
       - If you have the new G30 motor then select the new motor option under the system config tab as well.
       - Enable "expert view" on the top right.
+   
    **Note**: If BLE/DRV is low enough to be supported, but fails to flash, then press "Attempt DRV downgrade" and press flash.
 
 ### Usage
