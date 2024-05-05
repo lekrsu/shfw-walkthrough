@@ -89,8 +89,8 @@ To customize these phase limits, check out the Iq and Id sliders under "Field We
 ### Amps Display on Dash
 - **Modes:**
   - **Battery Amps:** Displayed when BMS communications is plugged in.
-  - **Phase Amps:** Shown when using battery emulation.
-  - **Approximated Phase Amps:** Done when both emulation and flux measurement are utilized.
+  - **Phase Amps:** Shown when using battery emulation (only in apps like Scootbatt).
+  - **Approximated Phase Amps:** Done when both emulation and flux measurement are utilized (only in apps like Scootbatt).
 - **Recommendation:** Select the display mode based on the configuration and diagnostic needs.
 
 ### Id/Iq Control Sliders
