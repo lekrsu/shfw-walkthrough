@@ -202,7 +202,7 @@ Where:
   <center>Example of what I_total of 42A actually looks on a flat road while requesting 30A torque, 30A flux.</center>
 </p>
 
-#### ADC modding info (G30)
+#### ADC modding info (G30 & ESx)
 
 Special thanks to BXLR for providing valuable information on the R_adc logic.
 
