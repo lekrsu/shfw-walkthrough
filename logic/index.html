@@ -9,6 +9,7 @@
 <body>
 <div class="container">
     <h1>Peak Current Draw Calculator</h1>
+    <p class="note">Note: The values calculated here represent theoretical outputs based on input parameters. Actual values may vary due to system efficiency, environmental conditions, and component tolerances. Please use these values for planning purposes and consult hardware specifications for real-world applications.</p>
     <div class="input-section">
         <!-- Iq (Torque component) -->
         <label for="torqueAmps">Torque amps (I<sub>q</sub>) in A:</label>
@@ -22,7 +23,7 @@
         <input type="number" id="variableFlux">
         <label for="currentMaxSpeed">Current max speed in km/h:</label>
         <input type="number" id="currentMaxSpeed">
-        <label for="activationSpeed">Start speed in km/h:</label>
+        <label for="activationSpeed">Field weakening start speed in km/h:</label>
         <input type="number" id="activationSpeed">
     </div>
     <button onclick="calculatePeakCurrentDraw()">Calculate Peak Current Draw (I<sub>total</sub>)</button>
