@@ -40,6 +40,17 @@ To install SHFW, follow these steps:
 
    - **Ninebot D-Series**: There is an experimental support for D-Series using the F-Series firmware. It's not known at which DRV version you will need a St-link. The guides should be identical to the F-Series.
 
+| Model | Compatible BLE | Compatible DRV |
+|:--|:--|:--|
+|  | *ST-link if incompatible* | *ST-link if incompatible* |
+| Ninebot G30 | All | Up to 1.7.3 [info](https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC) |
+| Ninebot G2 | All | ST-link, for patched stock firmware |
+| Ninebot F2-Series | N/A | N/A |
+| Xiaomi Essential, 1s, mi3 | Below 1.5.5 | All, (mi3 below 0.1.6) |
+| Ninebot EsX and Ex Series | All | Below 2.7.0 |
+| Ninebot F-Series | All | Below 5.7.0 |
+| Ninebot D-Series | All  | Experimental (F-Series firmware, unknown) |
+
 3. Flash Procedure:
 
    - Ensure you have the correct scooter model.
