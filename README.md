@@ -117,12 +117,12 @@ To achieve the top speed for Ninebot G30, follow these configurations:
 1. Set sport DPC curve to 30A with a flat curve (0.5 quadratic).
    - Configure the other modes as desired, preferably lower than sport for logical reasons.
    - Keep the speed limit to off / 0.
-   - Acceleration boost, 0-100%, personal choice.
+   - Acceleration boost, 100%.
    - Brake boost, 50%.
 
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
-   - Configure as follows: 20 km/h, 0A, 1500.
+   - Configure as follows: 20 km/h, 5A, 1000.
 
 3. Default tire size for G30 models are 10", but set 9.3" to get the dash speed to match GPS speed.
 
@@ -135,12 +135,12 @@ Additional information: Newer G30 BMS models might run firmware limited to 28A t
 For Xiaomi Pro 2 and mi3, use the following configurations:
 
 1. Sport mode, DPC, 25A, flat curve (0.5 quadratic).
-   - Acceleration boost, 0-100%, personal choice.
+   - Acceleration boost, 50%.
    - Brake boost, 0-100%, up to you, be aware that it's stong.
 
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
-   - Configure as follows: 20 km/h, 0A, 1500.
+   - Configure as follows: 20 km/h, 5A, 1000.
 
 4. Under Motor Settings, select 20 or 24khz.
 
@@ -149,7 +149,7 @@ For Xiaomi Pro 2 and mi3, use the following configurations:
 For Xiaomi Essential Lite, use these configurations:
 
 1. Sport mode, DPC, 18A, flat curve (0.5 quadratic).
-   - Acceleration boost, 0-100%, personal choice.
+   - Acceleration boost, 50%.
    - Brake boost, 0-100%, up to you, be aware that it's stong.
   
 2. Go to the field weakening tab and:
@@ -157,7 +157,35 @@ For Xiaomi Essential Lite, use these configurations:
    - Configure as follows: 15 km/h, 0A, 1500.
 
 4. Under Motor Settings, select 20 or 24khz.
-   
+
+## Explanation of PI Control and Acceleration Boost
+
+### PI Control for Voltage Time Conversion
+
+The PI control system converts amperes into voltage time. This process scales the voltage time from 0 to 31128, where 31128 represents 100%. This scaling is done for both current components. If the total time exceeds 31128, the values are adjusted down to a new value accordingly.
+
+### Voltage Measurement and Compensation
+
+The system measures only the voltage time, using a 100% duty cycle at maximum potential speed. This method allows the system to perform consistently at different voltages without requiring firmware adjustments. The PWM (Pulse Width Modulation) cycle is kept high continuously, operating similarly to a DC engine.
+
+### Implementation Specifics
+
+- **16-bit Counters:** The system uses 16-bit counters to implement PWM. The counters stop 4 loops before the end of the frequency.
+- **Duty Cycle Limit:** The duty cycle is limited to 95%, as achieving 100% is theoretically possible but impractical.
+- **Voltage Relevance:** Voltage is not directly relevant for control. Instead, the control manages the phase duration. For example:
+  - Phase A might be high for 10 ms
+  - Phase B might be high for 5 ms
+  - Phase C might be high for a shorter duration
+
+However, it is important to note that the actual phase times are much shorter than these examples.
+
+### Acceleration Boost
+
+To explain the acceleration boost, let's consider an example involving the existing PI control. The goal is to manipulate the control's behavior without changing its parameters.
+
+In this example, the target current is initially set higher, increasing from 40A to 60A temporarily. Before the control reaches 40A, the target is reset back to 40A. This approach enables the motor to respond more quickly without requiring more current permanently. However, this causes the proportional component to increase, leading to higher electricity consumption. The extra energy needed for this acceleration must be sourced from somewhere.
+
+
 ### Field Weakening Calculations and Logic
 
 #### What is Field Weakening?
