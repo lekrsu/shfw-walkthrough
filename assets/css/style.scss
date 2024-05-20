@@ -1,0 +1,41 @@
+---
+---
+
+/* @import "{{ site.theme }}";  this is the default */
+
+@import "https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown.min.css";
+
+body {
+  margin: 0;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    /*
+    --color-canvas-default, copied from 
+    https://github.com/sindresorhus/github-markdown-css/blob/main/github-markdown.css
+    */
+    background-color: #ffffff;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    /* --color-canvas-default */
+    background-color: #0d1117;
+  }
+}
+
+.markdown-body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 45px;
+}
+
+@media (max-width: 767px) {
+  .markdown-body {
+    padding: 15px;
+  }
+}
