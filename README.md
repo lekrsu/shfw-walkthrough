@@ -262,3 +262,5 @@ Please review the [LICENSE](LICENSE) file for detailed terms and conditions.
 ### Author Information
 
 This guide has been written by **lekrsu**, who can be reached on Discord with the tag `lekrsu` and on Telegram with the username `lekrsu`. You're welcome to send a pull request if you feel like the information needs correction.
+
+<p class="hidden">This guide can be viewed in a prettier form <a href="https://lekrsu.github.io/shfw-walkthrough">here</a>.</p>
