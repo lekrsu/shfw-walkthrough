@@ -121,8 +121,25 @@ To achieve the top speed for Ninebot G30, follow these configurations:
    - Brake boost, 50%.
 
 2. Go to the field weakening tab and:
-   - Enable field weakening for sport mode.
-   - Configure as follows: 20 km/h, 5A, 1500.
+
+   ### Normal use: Enable field weakening for sport mode.
+   - Configure as follows:
+     - Speed: 20 km/h
+     - Initial: 0A
+     - Variable: 1200
+
+   ### Higher efficiency:
+   - Configure as follows:
+     - Speed: 20 km/h
+     - Initial: 0A
+     - Variable: 600
+
+   ### Peak speeds:
+   - Configure as follows:
+     - Speed: 20 km/h
+     - Initial: 0A
+     - Variable: 2000
+     - Id phase limit slider to 65A
 
 3. Default tire size for G30 models are 10", but set 9.3" to get the dash speed to match GPS speed.
 
