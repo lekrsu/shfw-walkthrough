@@ -120,9 +120,9 @@ To achieve the top speed for Ninebot G30, follow these configurations:
    - Acceleration boost, 100%.
    - Brake boost, 50%.
 
-2. Go to the field weakening tab and:
+2. Go to the field weakening tab and enable field weakening for sport mode:
 
-   ### Normal use: Enable field weakening for sport mode.
+   ### Normal use:
    - Configure as follows:
      - Speed: 20 km/h
      - Initial: 0A
