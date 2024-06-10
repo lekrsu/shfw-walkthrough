@@ -53,13 +53,22 @@ To install SHFW, follow these steps:
 
 3. Flash Procedure:
 
-   - Ensure you have the correct scooter model.
    - Open the utility app, connect to the scooter.
-   - Press "Install/update SHFW" and select a version of the highest number. If there's only one, select that.
-      - If you have the new G30 motor then select the new motor option under the system config tab as well.
+   - Press "Install/update SHFW" and select a version of the highest number. If there's only one, select that and press flash. If it fails, and the above grid claims a supported version, try the "attempt drv downgrade" flash before SHFW.
+      - If you have the newer Gen 3 G30 motor then select the new motor option under the system config tab as well. If you don't know which one you have, compare the motor serial to this:
+
+      | Motor Serial Number (SN) | Generation           | Models                               |
+      |--------------------------|----------------------|--------------------------------------|
+      | Starts with 6            | First Generation     |                                      |
+      | Starts with 9            | Second Generation    | G30Ps, some G30Lx models             |
+      | Includes PCAH            | Third Generation     | G30P                                 |
+      | Includes PAAH            | Third Generation     | G30E                                 |
+      | Includes PADH            | Third Generation     | G30D                                 |
+
       - Enable "expert view" on the top right.
    
    **Note**: If BLE/DRV is low enough to be supported, but fails to flash, then press "Attempt DRV downgrade" and press flash.
+
 
 ### Usage
 
