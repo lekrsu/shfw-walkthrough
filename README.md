@@ -55,7 +55,7 @@ To install SHFW, follow these steps:
 
    - Open the utility app, connect to the scooter.
    - Press "Install/update SHFW" and select a version of the highest number. If there's only one, select that and press flash. If it fails, and the above grid claims a supported version, try the "attempt drv downgrade" flash before SHFW.
-      - If you have the newer Gen 3 G30 motor then select the new motor option under the system config tab as well. If you don't know which one you have, compare the motor serial to this:
+      - If you have the newer Gen 3 G30 motor then select the new motor option under the motor config tab as well. If you don't know which one you have, compare the motor serial to this:
 
       | Motor Serial Number (SN) | Generation           | Models                               |
       |--------------------------|----------------------|--------------------------------------|
