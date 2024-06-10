@@ -59,7 +59,7 @@ To install SHFW, follow these steps:
 
       | Motor Serial Number (SN) | Generation           | Models                               |
       |--------------------------|----------------------|--------------------------------------|
-      | Starts with 6            | First Generation     |                                      |
+      | Starts with 6            | First Generation     | Most older models                    |
       | Starts with 9            | Second Generation    | G30Ps, some G30Lx models             |
       | Includes PCAH            | Third Generation     | G30P                                 |
       | Includes PAAH            | Third Generation     | G30E                                 |
