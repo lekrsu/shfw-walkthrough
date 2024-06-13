@@ -7,6 +7,7 @@ For a detailed list of new features and improvements in SHFW 3.7.1, see the [3.7
 SHFW is a custom firmware available for flashing via the Scooterhacking Utility app. Configuring it might be challenging for new users. This guide aims to provide a quick and easy way to apply the important basics. The understanding aspect of all this can be overwhelming, but it will come as a side effect of your own testing and thinking as we can't do that for you.
 
 - [Quick SHFW Configuration Walkthrough](#quick-shfw-configuration-walkthrough)
+  - [SHFW 3.7.1 is out, go test it out!](#shfw-371-is-out-go-test-it-out)
   - [Installation](#installation)
   - [Usage](#usage)
     - [Peak Current Draw Calculator Features](#peak-current-draw-calculator-features)
@@ -16,10 +17,11 @@ SHFW is a custom firmware available for flashing via the Scooterhacking Utility 
   - [Field Weakening Calculations and Logic](#field-weakening-calculations-and-logic)
     - [What is Field Weakening?](#what-is-field-weakening)
     - [Field Weakening Flux Calculation](#field-weakening-flux-calculation)
-  - [Custom batteries and BMS emulation](#custom-batteries-and-bms-emulation)
-    - [ADC modding info (G30)](#adc-modding-info-g30)
-- [License](#license)
-- [Author Information](#author-information)
+  - [Custom Batteries and BMS Emulation](#custom-batteries-and-bms-emulation)
+    - [ADC Modding Info (G30 & ESx)](#adc-modding-info-g30--esx)
+  - [License](#license)
+  - [Author Information](#author-information)
+- [3.7.1 Changelog](#371-changelog)
 
 
 ### Installation
