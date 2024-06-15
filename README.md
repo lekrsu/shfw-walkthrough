@@ -14,6 +14,11 @@ SHFW is a custom firmware available for flashing via the Scooterhacking Utility 
     - [Ninebot G30](#ninebot-g30)
     - [Xiaomi Pro 2, 3](#xiaomi-pro-2-3)
     - [Xiaomi Essential, Lite, 1S](#xiaomi-essential-lite-1s)
+  - [Explanation of PI Control and Acceleration Boost](#explanation-of-pi-control-and-acceleration-boost)
+    - [PI Control for Voltage Time Conversion](#pi-control-for-voltage-time-conversion)
+    - [Voltage Measurement and Compensation](#voltage-measurement-and-compensation)
+    - [Implementation Specifics](#implementation-specifics)
+    - [Acceleration Boost](#acceleration-boost)
   - [Field Weakening Calculations and Logic](#field-weakening-calculations-and-logic)
     - [What is Field Weakening?](#what-is-field-weakening)
     - [Field Weakening Flux Calculation](#field-weakening-flux-calculation)
@@ -21,8 +26,6 @@ SHFW is a custom firmware available for flashing via the Scooterhacking Utility 
     - [ADC Modding Info (G30 & ESx)](#adc-modding-info-g30--esx)
   - [License](#license)
   - [Author Information](#author-information)
-- [3.7.1 Changelog](#371-changelog)
-
 
 ### Installation
 
@@ -50,10 +53,11 @@ To install SHFW, follow these steps:
     | Ninebot F2-Series | N/A | N/A |
     | Xiaomi Essential, 1s, pro2, mi3 | Below 1.5.5 | All, (mi3 below 0.1.6) |
     | Ninebot EsX and Ex Series | All | Below 2.7.0 |
+    | Ninebot E2, E2D, E2 Pro | N/A | N/A |
     | Ninebot F-Series | All | Below 5.7.0 |
     | Ninebot D-Series | All  | Experimental (F-Series firmware, unknown) |
 
-3. Flash Procedure:
+4. Flash Procedure:
 
    - Open the utility app, connect to the scooter.
    - Press "Install/update SHFW" and select a version of the highest number. If there's only one, select that and press flash. If it fails, and the above grid claims a supported version, try the "attempt drv downgrade" flash before SHFW.
@@ -66,8 +70,6 @@ To install SHFW, follow these steps:
       | Includes PCAH            | Third Generation     | G30P                                 |
       | Includes PAAH            | Third Generation     | G30E                                 |
       | Includes PADH            | Third Generation     | G30D                                 |
-
-      - Enable "expert view" on the top right.
    
    **Note**: If BLE/DRV is low enough to be supported, but fails to flash, then press "Attempt DRV downgrade" and press flash.
 
@@ -91,47 +93,18 @@ To customize these phase limits, check out the Iq and Id sliders under "Field We
   <center>Graph showing Torque 30A, initial 5A flux, with 100mA increments of variable flux, from the speeds 15 km/h and 25 km/h.</center>
 </p>
 
-## 3.7.1 changelog
-
-### PWM Frequency Adjustment
-- **Range:** 4-24kHz
-- **Effects:** Modifies motor frequency, impacting sound and vibrations. Higher frequencies may result in slight losses, but these are generally minimal.
-
-### Acceleration Boost
-- **Purpose:** Enhances torque delivery at low RPMs.
-- **Setting:** Slider can be adjusted up to 100%.
-- **Recommendation:** It's advisable to set the slider to 100% for improved performance.
-
-### Brake Boost
-- **Purpose:** Increases the aggressiveness of the electronic brake.
-- **Range:** Adjustable from 0 to 100.
-- **Effect:** Significantly enhances braking force.
-- **Recommendation:** Adjust according to desired braking response.
-
-### Amps Display on Dash
-- **Modes:**
-  - **Battery Amps:** Displayed when BMS communications is plugged in.
-  - **Phase Amps:** Shown when using battery emulation (only in apps like Scootbatt).
-  - **Approximated Phase Amps:** Done when both emulation and flux measurement are utilized (only in apps like Scootbatt).
-- **Recommendation:** Select the display mode based on the configuration and diagnostic needs.
-
-### Id/Iq Control Sliders
-- **Purpose:** Allows for the adjustment of maximum phase limits for torque (Id) and flux (Iq).
-- **Recommendation:** Modify these settings if there is a need to customize torque and flux limits.
-
-For further details and troubleshooting, refer to the subsequent sections of this guide or contact support.
-
 #### [Ninebot G30](#ninebot-g30)
 
 To achieve the top speed for Ninebot G30, follow these configurations:
 
-1. Set sport DPC curve to 30A with a flat curve (0.5 quadratic).
+1. Set sport DPC curve to 25A with a flat curve (0.5 quadratic).
    - Configure the other modes as desired, preferably lower than sport for logical reasons.
    - Keep the speed limit to off / 0.
    - Acceleration boost, 100%.
    - Brake boost, 50%.
 
 2. Go to the field weakening tab and enable field weakening for sport mode:
+   - Enable "expert view" on the top right.
 
    ### Normal use:
    - Configure as follows:
@@ -152,9 +125,9 @@ To achieve the top speed for Ninebot G30, follow these configurations:
      - Variable: 2000
      - Id phase limit slider to 65A
 
-3. Default tire size for G30 models are 10", but set 9.3" to get the dash speed to match GPS speed.
+4. Default tire size for G30 models are 10", but set 9.3" to get the dash speed to match GPS speed.
 
-4. Under Motor Settings, select 20 or 24khz.
+5. Under Motor Settings, select 20 or 24khz.
 
 Additional information: Newer G30 BMS models might run firmware limited to 28A total battery current. These, will have worse performance compared to the older 40A current models.
 
@@ -163,10 +136,11 @@ Additional information: Newer G30 BMS models might run firmware limited to 28A t
 For Xiaomi Pro 2 and mi3, use the following configurations:
 
 1. Sport mode, DPC, 25A, flat curve (0.5 quadratic).
-   - Acceleration boost, 50%.
+   - Acceleration boost, 100%.
    - Brake boost, 0-100%, up to you, be aware that it's stong.
 
 2. Go to the field weakening tab and:
+   - Enable "expert view" on the top right.
    - Enable field weakening for sport mode.
    - Configure as follows: 20 km/h, 5A, 1500.
 
@@ -176,11 +150,12 @@ For Xiaomi Pro 2 and mi3, use the following configurations:
 
 For Xiaomi Essential Lite, use these configurations:
 
-1. Sport mode, DPC, 18A, flat curve (0.5 quadratic).
-   - Acceleration boost, 50%.
+1. Sport mode, DPC, 1836A, flat curve (0.5 quadratic).
+   - Acceleration boost, 100%.
    - Brake boost, 0-100%, up to you, be aware that it's stong.
   
 2. Go to the field weakening tab and:
+   - Enable "expert view" on the top right.
    - Enable field weakening for sport mode.
    - Configure as follows: 15 km/h, 0A, 1500.
 
@@ -209,10 +184,11 @@ However, it is important to note that the actual phase times are much shorter th
 
 ### Acceleration Boost
 
-To explain the acceleration boost, let's consider an example involving the existing PI control. The goal is to manipulate the control's behavior without changing its parameters.
+The Acceleration Boost feature allows for enhanced motor response by temporarily increasing the target current during acceleration. This is controlled via a 0-100% slider, which adjusts the boost intensity.
 
-In this example, the target current is initially set higher, increasing from 40A to 60A temporarily. Before the control reaches 40A, the target is reset back to 40A. This approach enables the motor to respond more quickly without requiring more current permanently. However, this causes the proportional component to increase, leading to higher electricity consumption. The extra energy needed for this acceleration must be sourced from somewhere.
+When the slider is set, the system requests a higher current for a short duration, effectively doubling the target current when the slider is at 100%. For instance, setting the slider to 50% increases the requested current to 150% of the original target. This temporary boost enables the motor to achieve quicker acceleration without permanently raising the current limit.
 
+However, this technique results in increased electricity consumption as the system draws additional power during the acceleration phase. The necessary energy for this boost is sourced from the battery, leading to a higher overall power usage.
 
 ### Field Weakening Calculations and Logic
 
