@@ -97,7 +97,7 @@ To customize these phase limits, check out the Iq and Id sliders under "Field We
 
 To achieve the top speed for Ninebot G30, follow these configurations:
 
-1. Set sport DPC curve to 25A with a flat curve (0.5 quadratic).
+1. Set sport DPC curve to 25A that's fully quadratic (1.0)
    - Configure the other modes as desired, preferably lower than sport for logical reasons.
    - Keep the speed limit to off / 0.
    - Acceleration boost, 100%.
@@ -135,14 +135,15 @@ Additional information: Newer G30 BMS models might run firmware limited to 28A t
 
 For Xiaomi Pro 2 and mi3, use the following configurations:
 
-1. Sport mode, DPC, 25A, flat curve (0.5 quadratic).
+1. Sport mode, DPC, 20A, fully quadratic (1.0).
    - Acceleration boost, 100%.
    - Brake boost, 0-100%, up to you, be aware that it's stong.
+  - Brake, 30A flat (0.0)
 
 2. Go to the field weakening tab and:
    - Enable "expert view" on the top right.
    - Enable field weakening for sport mode.
-   - Configure as follows: 20 km/h, 5A, 1500.
+   - Configure as follows: 20 km/h, 0A, 1500.
 
 4. Under Motor Settings, select 20 or 24khz.
 
@@ -150,9 +151,10 @@ For Xiaomi Pro 2 and mi3, use the following configurations:
 
 For Xiaomi Essential Lite, use these configurations:
 
-1. Sport mode, DPC, 1836A, flat curve (0.5 quadratic).
+1. Sport mode, DPC, 15A, fully quadratic (1.0).
    - Acceleration boost, 100%.
    - Brake boost, 0-100%, up to you, be aware that it's stong.
+   - Brake, 30A flat (0.0)
   
 2. Go to the field weakening tab and:
    - Enable "expert view" on the top right.
