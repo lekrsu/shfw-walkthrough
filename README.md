@@ -1,10 +1,8 @@
 # Quick SHFW Configuration Walkthrough
 
-## SHFW 3.7.1 is out, go test it out!
-
-For a detailed list of new features and improvements in SHFW 3.7.1, see the [3.7.1 Changelog](#371-changelog).
-
 SHFW is a custom firmware available for flashing via the Scooterhacking Utility app. Configuring it might be challenging for new users. This guide aims to provide a quick and easy way to apply the important basics. The understanding aspect of all this can be overwhelming, but it will come as a side effect of your own testing and thinking as we can't do that for you.
+
+Join the discussions on [Telegram](https://t.me/scooterhackingchat) and [Discord](https://scooterhack.in/discord).
 
 - [Quick SHFW Configuration Walkthrough](#quick-shfw-configuration-walkthrough)
   - [SHFW 3.7.1 is out, go test it out!](#shfw-371-is-out-go-test-it-out)
