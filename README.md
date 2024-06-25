@@ -135,7 +135,7 @@ For Xiaomi Pro 2 and mi3, use the following configurations:
 
 1. Sport mode, DPC, 20A, fully quadratic (1.0).
    - Acceleration boost, 100%.
-   - Brake boost, 0-100%, up to you, be aware that it's stong.
+   - Brake boost, 0-100%, up to you, be aware that it's strong.
   - Brake, 30A flat (0.0)
 
 2. Go to the field weakening tab and:
@@ -151,7 +151,7 @@ For Xiaomi Essential Lite, use these configurations:
 
 1. Sport mode, DPC, 15A, fully quadratic (1.0).
    - Acceleration boost, 100%.
-   - Brake boost, 0-100%, up to you, be aware that it's stong.
+   - Brake boost, 0-100%, up to you, be aware that it's strong.
    - Brake, 30A flat (0.0)
   
 2. Go to the field weakening tab and:
