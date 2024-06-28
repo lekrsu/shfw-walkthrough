@@ -5,7 +5,6 @@ SHFW is a custom firmware available for flashing via the Scooterhacking Utility 
 Join the discussions on [Telegram](https://t.me/scooterhackingchat) and [Discord](https://scooterhack.in/discord).
 
 - [Quick SHFW Configuration Walkthrough](#quick-shfw-configuration-walkthrough)
-  - [SHFW 3.7.1 is out, go test it out!](#shfw-371-is-out-go-test-it-out)
   - [Installation](#installation)
   - [Usage](#usage)
     - [Peak Current Draw Calculator Features](#peak-current-draw-calculator-features)
