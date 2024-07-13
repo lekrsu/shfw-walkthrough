@@ -34,7 +34,7 @@ To install SHFW, follow these steps:
 
    - **Ninebot G30**: You can flash this firmware if the DRV version is at 1.7.0 or below. If your DRV is above 1.7.0 and not higher than 1.7.3, you need to select "Attempt Downgrade". For DRV versions above 1.7.3, you'll need an ST-Link. Refer to [this](https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC) for more information.
 
-   - **Xiaomi Scooters**: If the BLE version is at or above 1.5.0, you'll need an ST-Link for the dashboard. There are online guides available for this process.
+   - **Xiaomi Scooters**: If the BLE version is at or above 1.5.0, you'll need an ST-Link for the dashboard. There are online guides available for this process. Flashing on M365 with a 4-dot dashboard requires extra steps, written down in the 5th section of installation. 
 
    - **Ninebot EsX and Ex Series**: You can flash this firmware if the DRV version is below 2.7.0. Else you will need to use a ST-Link. There are online guides available for this process.
 
@@ -69,6 +69,27 @@ To install SHFW, follow these steps:
       | Includes PADH            | Third Generation     | G30D                                 |
    
    **Note**: If BLE/DRV is low enough to be supported, but fails to flash, then press "Attempt DRV downgrade" and press flash.
+   
+5. Flash Procedure for the 4-dot dashboard (Xiaomi M365):
+
+   **Note**: Because the M365's 4-dot dashboard isn't natively supported, you need to do some extra steps before flashing SHFW.
+
+   1. First, you will have to download the modified BLE090 from the pinned message in the Scooteracking.org discord server's #m365 channel.
+   2. If you have the file, download [DownG](https://play.google.com/store/apps/details?id=com.m365downgrade&hl=en_US) from the Play Store.
+   3. In downG, press "CONNECT" on the top left corner and select your scooter.
+   4. Press "OPEN BIN" in the bottom of the page, and select the zip that you downloaded from the discord message.
+   5. Press "FLASH" and wait for it to finish.
+   6. When it finishes, you can close downG, and connect with Scooterhacking Utility. If you were successful, it should display Mi Pro as the scooter model.
+   7. Go to the Flash tab, press "Install/Update SHFW" and select a version of the highest number. If there's only one, select that and press flash. 
+   8. Set up the settings in the Config tab. Keep in mind that the M365 is basically a Mi 1S, but the traces on the ESC are thinner, so pushing high amount of current through them isn't recommended.
+
+6. Flashing back stock firmware on a M365 with 4-dot dashboard.
+   1. You will have to download the M365 DRV and BLE firmware zip archives from the [Scooterhacking.org repo](https://firmware.scooterhacking.org/m365/) and modify the info.json file in both of them. I recommend downloading BLE072 and DRV156.
+   2. Open the info.json with any text editor in the DRV zip archive, and change "enforceModel" from true to false
+   3. Open the info.json the BLE zip, change "enforceModel" to false, and replace "mi_BLE_LEGACY" with "mi_BLE_NRF51822QFAA".
+   4. Connect to your scooter with Scooterhacking Utility, go to the flash tab, press "Load from file" and select the DRV zip that you just modified. If you did everything correctly, Utility shouldn't throw an error, and you can press flash. It might throw an error when flashing, and it will prompt you for automatic retry, press yes.
+   5. Flash the BLE zip the same way as the DRV.
+   6. If you did everything right, your scooter should be back to it's original state.
 
 
 ### Usage
