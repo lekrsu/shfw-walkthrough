@@ -4,8 +4,8 @@
 This guide will walk you through the process of reflashing the BLE module on your Xiaomi device. Please follow the instructions carefully and refer to the images provided for clarity.
 
 ## Required Tools
-- ST-Link V2
-- Male to Female Dupont cables
+- **ST-Link V2**
+- **male to female Dupont cables**
 - Knife or a similar tool for scraping
 - Windows PC for running Reflasher
 
@@ -16,13 +16,18 @@ This guide will walk you through the process of reflashing the BLE module on you
  
    <img src="xiaomi-cover.png" alt="Xiaomi Dash Cover" height="500"/>
    
-2. **Gather all required tools**: Ensure you have an ST-Link V2, male to female Dupont cables, and a Windows PC.
+2. **Gather all required tools**: Ensure you have an ST-Link V2, **male to female Dupont cables** (it'll be more conveninent with)
+, and a Windows PC.
  
    <img src="stlink.jpg" alt="ST-Link V2" height="500"/>
    
    <img src="dupont.png" alt="Dupont Cables" height="500"/>
    
 3. **Download the reflasher tool**: [Download the reflasher tool from ScooterHacking](https://www.scooterhacking.org/forum/viewtopic.php?t=676).
+
+Also, make sure to install the drivers needed:
+- [ST-Link usb drivers](https://zadig.akeo.ie), select the ST-Link and install WinUSB.
+- [NET Core v3.1 for Reflasher](https://cloud.cfw.sh/index.php/s/ZnpgikJLGM8q3Gt)
 
 ### 2. Connecting the Hardware
 1. **Scrape the coating on the BLE debug pads**: The BLE module has a slight coating on its debug pads. Use a knife or anything else and gently scrape away the coating to ensure a good contact.
