@@ -40,7 +40,7 @@ To install SHFW, follow these steps:
 
    - **Ninebot G30**: You can flash this firmware if the DRV version is at 1.7.0 or below. If your DRV is above 1.7.0 and not higher than 1.7.3, you need to select "Attempt Downgrade". For DRV versions above 1.7.3, you'll need an ST-Link. Refer to [this](https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC) for more information.
 
-   - **Xiaomi Scooters**: If the BLE version is at or above 1.5.0, you'll need an ST-Link for the dashboard. There are online guides available for this process. Flashing on M365 with a 4-dot dashboard requires extra steps written down in the 4th section of installation. 
+- **Xiaomi Scooters**: If the BLE version is at 1.5.5 or above, then you'll need to ST-Link downgrade the dashboard. [ST-Link Downgrade Guide](https://lekrsu.github.io/shfw-walkthrough/stlinking/xiaomi-ble). Flashing on M365 with a 4-dot dashboard requires extra steps detailed in the [4th section of installation](https://lekrsu.github.io/shfw-walkthrough/stlinking/xiaomi-ble#installation).
 
    - **Ninebot EsX and Ex Series**: You can flash this firmware if the DRV version is below 2.7.0. Else you will need to use a ST-Link. There are online guides available for this process.
 
