@@ -173,10 +173,10 @@ For Xiaomi Pro 2 and mi3, use the following configurations:
 
 #### [Xiaomi Essential, Lite, 1S](#xiaomi-essential-lite-1s)
 
-For Xiaomi Essential Lite, use these configurations:
+For Xiaomi Essential & 1S, use these configurations:
 
-1. Sport mode, DPC, 15A, fully quadratic (1.0).
-   - Acceleration boost, 100%.
+1. Sport mode, DPC, 18A, fully quadratic (1.0).
+   - Acceleration boost, 50%.
    - Brake boost, 0-100%, up to you, be aware that it's strong.
    - Brake, 30A flat (0.0)
   
