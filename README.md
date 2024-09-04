@@ -10,26 +10,6 @@ Join the discussions on [Telegram](https://t.me/scooterhackingchat) and [Discord
 </p>
 
 
-- [Quick SHFW Configuration Walkthrough](#quick-shfw-configuration-walkthrough)
-  - [Installation](#installation)
-  - [Usage](#usage)
-    - [Peak Current Draw Calculator Features](#peak-current-draw-calculator-features)
-    - [Ninebot G30](#ninebot-g30)
-    - [Xiaomi Pro 2, 3](#xiaomi-pro-2-3)
-    - [Xiaomi Essential, Lite, 1S](#xiaomi-essential-lite-1s)
-  - [Explanation of PI Control and Acceleration Boost](#explanation-of-pi-control-and-acceleration-boost)
-    - [PI Control for Voltage Time Conversion](#pi-control-for-voltage-time-conversion)
-    - [Voltage Measurement and Compensation](#voltage-measurement-and-compensation)
-    - [Implementation Specifics](#implementation-specifics)
-    - [Acceleration Boost](#acceleration-boost)
-  - [Field Weakening Calculations and Logic](#field-weakening-calculations-and-logic)
-    - [What is Field Weakening?](#what-is-field-weakening)
-    - [Field Weakening Flux Calculation](#field-weakening-flux-calculation)
-  - [Custom Batteries and BMS Emulation](#custom-batteries-and-bms-emulation)
-    - [ADC Modding Info (G30 & ESx)](#adc-modding-info-g30--esx)
-  - [License](#license)
-  - [Author Information](#author-information)
-
 ### Installation
 
 To install SHFW, follow these steps:
@@ -38,15 +18,17 @@ To install SHFW, follow these steps:
 
 2. Supported Scooter Models:
 
-   - **Ninebot G30**: You can flash this firmware if the DRV version is at 1.7.0 or below. If your DRV is above 1.7.0 and not higher than 1.7.3, you need to select "Attempt Downgrade". For DRV versions above 1.7.3, you'll need an ST-Link. Refer to [this](https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC) for more information.
+   - **Ninebot G30**: You can flash this firmware if the DRV version is at 1.7.0 or below. If your DRV is above 1.7.0 and not higher than 1.7.3, you need to select "Attempt Downgrade". For DRV versions above 1.7.3, you'll need an ST-Link. Refer to [this](https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC) for more information. Reflasher will flash patched 1.8.7, so if you've just ST-Linked and see this version, don't be alarmed.
 
 - **Xiaomi Scooters**: If the BLE version is at 1.5.5 or above, then you'll need to ST-Link downgrade the dashboard. [ST-Link Downgrade Guide](https://lekrsu.github.io/shfw-walkthrough/stlinking/xiaomi-ble). Flashing on M365 with a 4-dot dashboard requires extra steps detailed in the [4th section of installation](https://lekrsu.github.io/shfw-walkthrough/stlinking/xiaomi-ble#installation).
 
-   - **Ninebot EsX and Ex Series**: You can flash this firmware if the DRV version is below 2.7.0. Else you will need to use a ST-Link. There are online guides available for this process.
+   - **Ninebot EsX**: Every version is supported.
+   
+   - **Ex Series**: [Not E2-series, only the older E22, E45, etc]You can flash this firmware if the DRV version is below 2.7.0. Else you will need to use a ST-Link. There are online guides available for this process.
 
-   - **Ninebot F-Series**: You can flash this firmware if the DRV version is below 5.7.0. Else you will need to use a ST-Link. There are online guides available for this process.
+   - **Ninebot F-Series**: [Older SHFW 0.3.6] You can flash this firmware if the DRV version is below 5.7.0. Else you will need to use a ST-Link. There are online guides available for this process. The app will prompt for updates even if there's none, be aware.
 
-   - **Ninebot D-Series**: There is an experimental support for D-Series using the F-Series firmware. It's not known at which DRV version you will need a ST-Link. The guides should be identical to the F-Series.
+   - **Ninebot D-Series**: [Currently not working] There is an experimental support for D-Series using the F-Series firmware. It's not known at which DRV version you will need a ST-Link. The guides should be identical to the F-Series.
 
     | Model | Compatible BLE | Compatible DRV |
     |:--|:--|:--|
@@ -55,7 +37,8 @@ To install SHFW, follow these steps:
     | Ninebot G2 | All | ST-Link, for patched stock firmware |
     | Ninebot F2-Series | N/A | N/A |
     | Xiaomi Essential, 1s, pro2, mi3 | Below 1.5.5 | All |
-    | Ninebot EsX and Ex Series | All | Below 2.7.0 |
+    | Ninebot EsX | All | All |
+    | Ex Series | All | Below 2.7.0 |
     | Ninebot E2, E2D, E2 Pro | N/A | N/A |
     | Ninebot F-Series | All | Below 5.7.0 |
     | Ninebot D-Series | All  | Experimental (F-Series firmware, unknown) |
@@ -72,7 +55,7 @@ To install SHFW, follow these steps:
       | Starts with 9            | Second Generation    | G30Ps, some G30Lx models             |
       | Includes PCAH            | Third Generation     | G30P                                 |
       | Includes PAAH            | Third Generation     | G30E                                 |
-      | Includes PADH            | Third Generation     | G30D                                 |
+      | Includes PADH/PADJ       | Third Generation     | G30D                                 |
    
    **Note**: If BLE/DRV is low enough to be supported, but fails to flash, then press "Attempt DRV downgrade" and press flash.
    
@@ -80,16 +63,12 @@ To install SHFW, follow these steps:
 
    **Note**: Because the M365's 4-dot dashboard isn't natively supported, you need to do some extra steps before flashing SHFW.
 
-   1. First, you will have to download the modified BLE090 from the pinned message in the Scooteracking.org discord server's #m365 channel.
-   2. If you have the file, download [DownG](https://play.google.com/store/apps/details?id=com.m365downgrade&hl=en_US) from the Play Store.
-   3. In downG, press "CONNECT" on the top left corner and select your scooter.
-   4. Press "OPEN BIN" in the bottom of the page, and select the zip that you downloaded from the discord message.
-   5. Press "FLASH" and wait for it to finish.
-   6. When it finishes, you can close downG, and connect with Scooterhacking Utility. If you were successful, it should display Mi Pro as the scooter model.
-   7. Go to the Flash tab, press "Install/Update SHFW" and select a version of the highest number. If there's only one, select that and press flash. 
-   8. Set up the settings in the Config tab. Keep in mind that the M365 is basically a Mi 1S, but the traces on the ESC are thinner, so pushing high amount of current through them isn't recommended.
+   1. First, you will have to download the modified M365-ProBLE-1.zip from the pinned message in the Scooteracking.org discord server's #m365 channel.
+   2. If you have the file, download [Utility](https://utility.cfw.sh/).
+   3. Connect to your scooter with Scooterhacking Utility, go to the flash tab, press "Load from file" and select the DRV zip that you just downloaded.
+   4. SHFW will now be available via the Install SHFW tab.
 
-6. Flashing back stock firmware on a M365 with 4-dot dashboard.
+6. Flashing back stock firmware on a M365 with 4-dot dashboard, if you want to revert the changes.
    1. You will have to download the M365 DRV and BLE firmware zip archives from the [Scooterhacking.org repo](https://firmware.scooterhacking.org/m365/) and modify the info.json file in both of them. I recommend downloading BLE072 and DRV156.
    2. Open the info.json with any text editor in the DRV zip archive, and change "enforceModel" from true to false
    3. Open the info.json the BLE zip, change "enforceModel" to false, and replace "mi_BLE_LEGACY" with "mi_BLE_NRF51822QFAA".
@@ -179,6 +158,22 @@ For Xiaomi Essential & 1S, use these configurations:
    - Acceleration boost, 50%.
    - Brake boost, 0-100%, up to you, be aware that it's strong.
    - Brake, 30A flat (0.0)
+  
+2. Go to the field weakening tab and:
+   - Enable "expert view" on the top right.
+   - Enable field weakening for sport mode.
+   - Configure as follows: 15 km/h, 0A, 1500.
+
+4. Under Motor Settings, select 20 or 24khz.
+
+#### [Ninebot EsX, Ex](#xiaomi-essential-lite-1s)
+
+For Ninebot EsX, Ex, use these configurations:
+
+1. Sport mode, DPC, 18A, fully quadratic (1.0).
+   - Acceleration boost, 50%.
+   - Brake boost, 0-100%, up to you, be aware that it's strong.
+   - Brake, 55A flat (0.0)
   
 2. Go to the field weakening tab and:
    - Enable "expert view" on the top right.
