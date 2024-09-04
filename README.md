@@ -166,7 +166,7 @@ For Xiaomi Essential & 1S, use these configurations:
 
 4. Under Motor Settings, select 20 or 24khz.
 
-#### [Ninebot EsX, Ex](#xiaomi-essential-lite-1s)
+#### [Ninebot EsX, Ex](#ninebot-esx-ex)
 
 For Ninebot EsX, Ex, use these configurations:
 
