@@ -109,7 +109,7 @@ To achieve the top speed for Ninebot G30, follow these configurations:
    - Brake boost, 50%.
    - Overmodulation on for sport/drive
 
-You can set eco and drive to lower values, e.g. 10A eco, 25A DPC. Drive will use less current since we won't enable field weakening.
+You can set eco and drive to lower values, e.g. 10A eco, 25A drive. Drive will use less current since we won't enable field weakening.
 
 2. Go to the field weakening tab and enable field weakening for sport mode:
 
@@ -149,7 +149,7 @@ For Xiaomi Pro 2 and mi3, use the following configurations:
   - Brake, 30A flat (0.0)
   - Overmodulation on for sport/drive
 
-You can set eco and drive to lower values, e.g. 10A eco, 25A DPC. Drive will use less current since we won't enable field weakening.
+You can set eco and drive to lower values, e.g. 10A eco, 20A drive. Drive will use less current since we won't enable field weakening.
 
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
@@ -167,6 +167,9 @@ For Xiaomi Essential & 1S, use these configurations:
    - Acceleration boost, 50%.
    - Brake boost, 0-100%, up to you, be aware that it's strong.
    - Brake, 30A flat (0.0)
+   - Overmodulation on for sport/drive
+
+You can set eco and drive to lower values, e.g. 10A eco, 18A drive. Drive will use less current since we won't enable field weakening.
   
 2. Go to the field weakening tab and:
 
@@ -187,7 +190,7 @@ For Ninebot EsX, Ex, use these configurations:
    - Brake, 55A flat (0.0)
    - Overmodulation on for sport/drive
 
-You can set eco and drive to lower values, e.g. 10A eco, 25A DPC. Drive will use less current since we won't enable field weakening.
+You can set eco and drive to lower values, e.g. 10A eco, 18A drive. Drive will use less current since we won't enable field weakening.
   
 2. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
