@@ -34,7 +34,7 @@ To install SHFW, follow these steps:
     |:--|:--|:--|
     |  | *ST-Link if incompatible* | *ST-Link if incompatible* |
     | Ninebot G30 | All | [Up to 1.7.3](https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC) |
-    | Ninebot G2 | All | ST-Link, for patched stock firmware |
+    | Ninebot G2 | All | ST-Link |
     | Ninebot F2-Series | N/A | N/A |
     | Xiaomi Essential, 1s, pro2, mi3 | Below 1.5.5 | All |
     | Ninebot EsX | All | All |
