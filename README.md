@@ -96,18 +96,22 @@ To customize these phase limits, check out the Iq and Id sliders under "Field We
   <center>Graph showing Torque 30A, initial 5A flux, with 100mA increments of variable flux, from the speeds 15 km/h and 25 km/h.</center>
 </p>
 
-#### [Ninebot G30](#ninebot-g30)
+#### [Ninebot G30, G2](#ninebot-g30-g2)
 
 To achieve the top speed for Ninebot G30, follow these configurations:
+
+   - Enable "expert view" on the top right.
 
 1. Set sport DPC curve to 25A that's fully quadratic (1.0)
    - Configure the other modes as desired, preferably lower than sport for logical reasons.
    - Keep the speed limit to off / 0.
    - Acceleration boost, 100%.
    - Brake boost, 50%.
+   - Overmodulation on for sport/drive
+
+You can set eco and drive to lower values, e.g. 10A eco, 25A DPC. Drive will use less current since we won't enable field weakening.
 
 2. Go to the field weakening tab and enable field weakening for sport mode:
-   - Enable "expert view" on the top right.
 
    ### Normal use:
    - Configure as follows:
@@ -126,11 +130,10 @@ To achieve the top speed for Ninebot G30, follow these configurations:
      - Speed: 20 km/h
      - Initial: 0A
      - Variable: 2000
-     - Id phase limit slider to 65A
 
-4. Default tire size for G30 models are 10", but set 9.3" to get the dash speed to match GPS speed.
+4. Default tire size for Max models are 10", but set 9.3" on G30 and 9.7" on G2 to get the dash speed to match GPS speed.
 
-5. Under Motor Settings, select 20 or 24khz.
+5. Under Motor Settings, select 20 or 24khz. G2 doesn't have this option.
 
 Additional information: Newer G30 BMS models might run firmware limited to 28A total battery current. These, will have worse performance compared to the older 40A current models.
 
@@ -138,13 +141,17 @@ Additional information: Newer G30 BMS models might run firmware limited to 28A t
 
 For Xiaomi Pro 2 and mi3, use the following configurations:
 
+   - Enable "expert view" on the top right.
+
 1. Sport mode, DPC, 20A, fully quadratic (1.0).
    - Acceleration boost, 100%.
    - Brake boost, 0-100%, up to you, be aware that it's strong.
   - Brake, 30A flat (0.0)
+  - Overmodulation on for sport/drive
+
+You can set eco and drive to lower values, e.g. 10A eco, 25A DPC. Drive will use less current since we won't enable field weakening.
 
 2. Go to the field weakening tab and:
-   - Enable "expert view" on the top right.
    - Enable field weakening for sport mode.
    - Configure as follows: 20 km/h, 0A, 1500.
 
@@ -154,13 +161,15 @@ For Xiaomi Pro 2 and mi3, use the following configurations:
 
 For Xiaomi Essential & 1S, use these configurations:
 
+   - Enable "expert view" on the top right.
+
 1. Sport mode, DPC, 18A, fully quadratic (1.0).
    - Acceleration boost, 50%.
    - Brake boost, 0-100%, up to you, be aware that it's strong.
    - Brake, 30A flat (0.0)
   
 2. Go to the field weakening tab and:
-   - Enable "expert view" on the top right.
+
    - Enable field weakening for sport mode.
    - Configure as follows: 15 km/h, 0A, 1500.
 
@@ -170,13 +179,17 @@ For Xiaomi Essential & 1S, use these configurations:
 
 For Ninebot EsX, Ex, use these configurations:
 
+   - Enable "expert view" on the top right.
+
 1. Sport mode, DPC, 18A, fully quadratic (1.0).
    - Acceleration boost, 50%.
    - Brake boost, 0-100%, up to you, be aware that it's strong.
    - Brake, 55A flat (0.0)
+   - Overmodulation on for sport/drive
+
+You can set eco and drive to lower values, e.g. 10A eco, 25A DPC. Drive will use less current since we won't enable field weakening.
   
 2. Go to the field weakening tab and:
-   - Enable "expert view" on the top right.
    - Enable field weakening for sport mode.
    - Configure as follows: 15 km/h, 0A, 1500.
 
