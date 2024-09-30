@@ -65,8 +65,8 @@ To install SHFW, follow these steps:
 
    1. First, you will have to download the modified M365-ProBLE-1.zip from the pinned message in the Scooteracking.org discord server's #m365 channel.
    2. If you have the file, download [Utility](https://utility.cfw.sh/).
-   3. Connect to your scooter with Scooterhacking Utility, go to the flash tab, press "Load from file" and select the DRV zip that you just downloaded.
-   4. SHFW will now be available via the Install SHFW tab.
+   3. Connect to your scooter with Scooterhacking Utility, go to the flash tab, press "Load from file" and select the BLE zip that you just downloaded.
+   4. SHFW will now be available via the Install SHFW tab and the scooter identifies as 'Pro'.
 
 6. Flashing back stock firmware on a M365 with 4-dot dashboard, if you want to revert the changes.
    1. You will have to download the M365 DRV and BLE firmware zip archives from the [Scooterhacking.org repo](https://firmware.scooterhacking.org/m365/) and modify the info.json file in both of them. I recommend downloading BLE072 and DRV156.
