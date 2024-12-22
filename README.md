@@ -4,7 +4,7 @@ SHFW is a custom firmware available for flashing via the Scooterhacking Utility 
 
 Join the discussions on [Telegram](https://t.me/scooterhackingchat) and [Discord](https://scooterhack.in/discord).
 <p align="left">
-  <a href="https://discord.gg/https://discord.gg/scooterhacking" target="_blank">
+  <a href="https://discord.gg/scooterhacking" target="_blank">
     <img src="https://dcbadge.limes.pink/api/server/https://discord.gg/scooterhacking"/>
   </a>
 </p>
