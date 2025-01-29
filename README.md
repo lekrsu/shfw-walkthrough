@@ -133,7 +133,7 @@ You can set eco and drive to lower values, e.g. 10A eco, 25A drive. Drive will u
 
 4. Default tire size for Max models are 10", but set 9.3" on G30 and 9.7" on G2 and F2 to get the dash speed to match GPS speed.
 
-5. Under Motor Settings, select 20 or 24khz. G2 doesn't have this option.
+5. Under Motor Settings, select 20 or 24khz. G2 and F2 doesn't have this option.
 
 Additional information: Newer G30 BMS models might run firmware limited to 28A total battery current. These, will have worse performance compared to the older 40A current models.
 
