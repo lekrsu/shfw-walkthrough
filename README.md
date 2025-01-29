@@ -35,7 +35,7 @@ To install SHFW, follow these steps:
     |  | *ST-Link if incompatible* | *ST-Link if incompatible* |
     | Ninebot G30 | All | [Up to 1.7.3](https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC) |
     | Ninebot G2 | All | ST-Link |
-    | Ninebot F2-Series | N/A | N/A |
+    | Ninebot F2-Series | All | ST-Link |
     | Xiaomi Essential, 1s, pro2, mi3 | Below 1.5.5 | All |
     | Ninebot EsX | All | All |
     | Ex Series | All | Below 2.7.0 |
@@ -96,7 +96,7 @@ To customize these phase limits, check out the Iq and Id sliders under "Field We
   <center>Graph showing Torque 30A, initial 5A flux, with 100mA increments of variable flux, from the speeds 15 km/h and 25 km/h.</center>
 </p>
 
-#### [Ninebot G30, G2](#ninebot-g30-g2)
+#### [Ninebot G30, G2, F2](#ninebot-g30-g2-f2)
 
 To achieve the top speed for Ninebot G30, follow these configurations:
 
@@ -131,9 +131,9 @@ You can set eco and drive to lower values, e.g. 10A eco, 25A drive. Drive will u
      - Initial: 0A
      - Variable: 2000
 
-4. Default tire size for Max models are 10", but set 9.3" on G30 and 9.7" on G2 to get the dash speed to match GPS speed.
+4. Default tire size for Max models are 10", but set 9.3" on G30 and 9.7" on G2 and F2 to get the dash speed to match GPS speed.
 
-5. Under Motor Settings, select 20 or 24khz. G2 doesn't have this option.
+5. Under Motor Settings, select 20 or 24khz. G2 and F2 doesn't have this option.
 
 Additional information: Newer G30 BMS models might run firmware limited to 28A total battery current. These, will have worse performance compared to the older 40A current models.
 
