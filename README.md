@@ -43,7 +43,7 @@ To install SHFW, follow these steps:
     | Ninebot F-Series | All | Below 5.7.0 |
     | Ninebot D-Series | All  | Experimental (F-Series firmware, unknown) |
 
-4. Flash Procedure:
+3. Flash Procedure:
 
    - Open the utility app, connect to the scooter.
    - Press "Install/update SHFW" and select a version of the highest number. If there's only one, select that and press flash. If it fails, and the above grid claims a supported version, try the "attempt drv downgrade" flash before SHFW.
@@ -59,7 +59,7 @@ To install SHFW, follow these steps:
    
    **Note**: If BLE/DRV is low enough to be supported, but fails to flash, then press "Attempt DRV downgrade" and press flash.
    
-5. Flash Procedure for the 4-dot dashboard (Xiaomi M365):
+4. Flash Procedure for the 4-dot dashboard (only Xiaomi M365):
 
    **Note**: Because the M365's 4-dot dashboard isn't natively supported, you need to do some extra steps before flashing SHFW.
    1. Download [Utility](https://utility.cfw.sh/).
@@ -68,7 +68,7 @@ To install SHFW, follow these steps:
    4. Connect to the scooter with Scooterhacking Utility, go to the flash tab, press "Load from file" and select the BLE zip that you just downloaded.
    5. SHFW will now be available via the Install SHFW tab and the scooter identifies as 'Pro'.
 
-6. Flashing back stock firmware on a M365 with 4-dot dashboard, if the need to revert the changes occurs.
+5. Flashing back stock firmware on a M365 with 4-dot dashboard, if the need to revert the changes occurs.
    1. You will have to download the M365 DRV and BLE firmware zip archives from the [Scooterhacking.org repo](https://firmware.scooterhacking.org/m365/) and modify the info.json file in both of them. I recommend downloading BLE072 and DRV156.
    2. Open the info.json with any text editor in the DRV zip archive, and change "enforceModel" from true to false
    3. Open the info.json the BLE zip, change "enforceModel" to false, and replace "mi_BLE_LEGACY" with "mi_BLE_NRF51822QFAA".
