@@ -18,7 +18,9 @@ To install SHFW, follow these steps:
 
 2. Supported Scooter Models:
 
-   - **Ninebot G30**: You can flash this firmware if the DRV version is at 1.7.0 or below. If your DRV is above 1.7.0 and not higher than 1.7.3, you need to select "Attempt Downgrade". For DRV versions above 1.7.3, you'll need an ST-Link. Refer to [this](https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC) for more information. Reflasher will flash patched 1.8.7, so if you've just ST-Linked and see this version, don't be alarmed.
+      - **Ninebot G30**: You can flash this firmware if the DRV version is at 1.7.0 or below. If your DRV is above 1.7.0 and not higher than 1.7.3, you need to select "Attempt Downgrade". For DRV versions above 1.7.3, you'll need an ST-Link. Refer to [this](https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC) for more information. Reflasher will flash patched 1.8.7, so if you've just ST-Linked and see this version, don't be alarmed.
+
+      - **Ninebot G2**: Every regional model is compatible, needs to be unlocked via ST-Link.
   
       - **Ninebot EsX**: Every version is supported.
      
