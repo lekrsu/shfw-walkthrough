@@ -1,6 +1,6 @@
 # Xiaomi BLE Reflashing Guide
 
-<p align="left">
+<p align="left"> 
   <a href="https://discord.gg/https://discord.gg/scooterhacking" target="_blank">
     <img src="https://dcbadge.limes.pink/api/server/https://discord.gg/scooterhacking"/>
   </a>
