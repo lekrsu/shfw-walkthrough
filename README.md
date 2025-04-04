@@ -121,13 +121,13 @@ You can set eco and drive to lower values, e.g. 10A eco, 25A drive. Drive will u
      - Initial: 0A
      - Variable: 1200
 
-   ### Higher efficiency:
+   ### Higher efficiency, less field weakening:
    - Configure as follows:
      - Speed: 20 km/h
      - Initial: 0A
      - Variable: 600
 
-   ### Peak speeds:
+   ### Peak speeds, likely to cause issues
    - Configure as follows:
      - Speed: 20 km/h
      - Initial: 0A
