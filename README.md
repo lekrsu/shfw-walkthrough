@@ -14,31 +14,33 @@ Join the discussions on [Telegram](https://t.me/scooterhackingchat) and [Discord
 
 To install SHFW, follow these steps:
 
-1. Download the flashing app from [https://utility.cfw.sh/](https://utility.cfw.sh/).
+1. Download our official app [Utility](https://utility.cfw.sh/), alternatively for wide range device support, including iOS, check out [Luna](https://luna.cfw.sh/).
 
 2. Supported Scooter Models:
 
-      - **Ninebot G30, G30L**: You can flash this firmware if the DRV version is at 1.7.0 or below. If your DRV is above 1.7.0 and not higher than 1.7.3, you need to select "Attempt Downgrade". For DRV versions above 1.7.3, you'll need an ST-Link. Refer to [this](https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC) for more information. Reflasher will flash patched 1.8.7, so if you've just ST-Linked and see this version, don't be alarmed.
+      - **Ninebot G30, G30L**: You can flash this firmware if the DRV version is at 1.7.3 or below. If your DRV is 1.7.3, you need to select "Attempt Downgrade" before SHFW. For DRV versions above 1.7.3, you'll need an ST-Link. Refer to [this](https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC) for more information.
 
       - **Ninebot G2, F2, F2 Plus, F2 Pro**: Every regional model is compatible, needs to be unlocked via ST-Link.
   
       - **Ninebot ESx**: Every version is supported.
      
-      - **Exx Series**: [Not E2-series, only the older E22, E45, etc]You can flash this firmware if the DRV version is below 2.7.0. Else you will need to use a ST-Link. There are online guides available for this process.
+      - **Exx Series**: [Not E2, E2 Plus, E2 Pro. Only the older E22, E45, etc] You can flash SHFW if the DRV version is below 2.7.0. Else you will need to use a ST-Link.
   
-      - **Ninebot F-Series**: [Older SHFW 0.3.6] You can flash this firmware if the DRV version is below 5.7.0. Else you will need to use a ST-Link. There are online guides available for this process. The app will prompt for updates even if there's none, be aware.
+      - **Ninebot F-Series**: [Older SHFW 0.3.6] You can flash this firmware if the DRV version is below 5.7.0. Else you will need to use a ST-Link. There are online guides available for this process. The app will prompt for updates even if there's none, be aware. Needs to flash with up to date Utility, then configured with [Utility 2.5](https://utility.cfw.sh/distrib/ScooterHackingUtility-2.5.apk). Do not enable brake boost.
   
       - **Ninebot D-Series**: [Currently not working] There is an experimental support for D-Series using the F-Series firmware. It's not known at which DRV version you will need a ST-Link. The guides should be identical to the F-Series.
 
-   - **Xiaomi Scooters**: If the BLE version is at 1.5.5 or above, then you'll need to ST-Link downgrade the dashboard. [ST-Link Downgrade Guide](https://lekrsu.github.io/shfw-walkthrough/stlinking/xiaomi-ble). Flashing on M365 with a 4-dot dashboard requires extra steps detailed in the [4th section of installation](https://lekrsu.github.io/shfw-walkthrough/stlinking/xiaomi-ble#installation).
+   - **Xiaomi Scooters**: If the BLE version is at 1.5.5 or above, then you'll need to ST-Link downgrade the dashboard. [ST-Link Downgrade Guide](https://lekrsu.github.io/shfw-walkthrough/stlinking/xiaomi-ble). Flashing on M365 with a 4-dot dashboard requires extra steps detailed in the [4th section of installation](https://lekrsu.github.io/shfw-walkthrough/stlinking/xiaomi-ble#installation). Attempt DRV downgrade via our app if flashing SHFW fails with a supported BLE version.
+
+    [Reflasher](https://www.scooterhacking.org/forum/viewtopic.php?t=676), [Webflasher](https://flash.bastelpichi.de/) and [ScooterFlasher](https://github.com/scooterteam/scooterflasher) are programs used for ST-Linking, choose either one if it's needed. 
 
     | Model | Compatible BLE | Compatible DRV |
     |:--|:--|:--|
     |  | *ST-Link if incompatible* | *ST-Link if incompatible* |
     | Ninebot G30 | All | [Up to 1.7.3](https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC) |
     | Ninebot G2 | All | ST-Link |
-    | Ninebot F2-Series | All | ST-Link |
-    | Xiaomi Essential, 1s, pro2, mi3 | Below 1.5.5 | All |
+    | Ninebot F2, F2 Plus, F2 Pro | All | ST-Link |
+    | Xiaomi Essential, 1s, Pro 2, 3 | Below 1.5.5 | All |
     | Ninebot EsX | All | All |
     | Ex Series | All | Below 2.7.0 |
     | Ninebot E2, E2D, E2 Pro | N/A | N/A |
@@ -48,8 +50,8 @@ To install SHFW, follow these steps:
 3. Flash Procedure:
 
    - Open the utility app, connect to the scooter.
-   - Press "Install/update SHFW" and select a version of the highest number. If there's only one, select that and press flash. If it fails, and the above grid claims a supported version, try the "attempt drv downgrade" flash before SHFW.
-      - If you have the newer Gen 3 G30 motor then select the new motor option under the motor config tab as well. If you don't know which one you have, compare the motor serial to this:
+   - Press "Install/update SHFW" and select the version of the highest number, if there are multiple choices. Then, press flash. If it fails, and the above grid claims a supported version, try the "attempt drv downgrade" flash before SHFW.
+      - If you have the newer Gen 3 G30 motor then select the new motor option under the motor config tab. This is automatic with original serial. If you don't know which one you have, compare the motor serial to this:
 
       | Motor Serial Number (SN) | Generation           | Models                               |
       |--------------------------|----------------------|--------------------------------------|
@@ -58,30 +60,11 @@ To install SHFW, follow these steps:
       | Includes PCAH            | Third Generation     | G30P                                 |
       | Includes PAAH            | Third Generation     | G30E                                 |
       | Includes PADH/PADJ       | Third Generation     | G30D                                 |
-   
-   **Note**: If BLE/DRV is low enough to be supported, but fails to flash, then press "Attempt DRV downgrade" and press flash.
-   
-4. Flash Procedure for the 4-dot dashboard (only Xiaomi M365):
-
-   **Note**: Because the M365's 4-dot dashboard isn't natively supported, you need to do some extra steps before flashing SHFW.
-   1. Download [Utility](https://utility.cfw.sh/).
-   2. Connect, go to 'Load from repo', select DRV, select the latest version and press 'Start flash'. 
-   3. Download the modified M365-ProBLE-1.zip from the pinned message in the Scooterhacking.org discord server's #m365 channel.
-   4. Connect to the scooter with Scooterhacking Utility, go to the flash tab, press "Load from file" and select the BLE zip that you just downloaded.
-   5. SHFW will now be available via the Install SHFW tab and the scooter identifies as 'Pro'.
-
-5. Flashing back stock firmware on a M365 with 4-dot dashboard, if the need to revert the changes occurs.
-   1. You will have to download the M365 DRV and BLE firmware zip archives from the [Scooterhacking.org repo](https://firmware.scooterhacking.org/m365/) and modify the info.json file in both of them. I recommend downloading BLE072 and DRV156.
-   2. Open the info.json with any text editor in the DRV zip archive, and change "enforceModel" from true to false
-   3. Open the info.json the BLE zip, change "enforceModel" to false, and replace "mi_BLE_LEGACY" with "mi_BLE_NRF51822QFAA".
-   4. Connect to your scooter with Scooterhacking Utility, go to the flash tab, press "Load from file" and select the DRV zip that you just modified. If you did everything correctly, Utility shouldn't throw an error, and you can press flash. It might throw an error when flashing, and it will prompt you for automatic retry, press yes.
-   5. Flash the BLE zip the same way as the DRV.
-   6. If you did everything right, your scooter should be back to it's original state.
-
+      
 
 ### Usage
 
-Please be aware that the information provided below is intended for practical use, but it should be used with caution. Remember, field weakening, because of its nature, will not be efficient.
+Please be aware that the information provided below is intended for practical use, but it should be used with caution. Remember, field weakening, by its nature, will not be efficient.
 
 #### Peak Current Draw Calculator Features
 
@@ -91,25 +74,20 @@ Please be aware that the information provided below is intended for practical us
 
 To customize these phase limits, check out the Iq and Id sliders under "Field Weakening".
 
-[**Try the Peak Current Draw Calculator**](https://lekrsu.github.io/shfw-walkthrough/logic/index.html) - A user-friendly tool designed for clarity and efficiency in calculating electrical parameters. Keep in mind, this is peak, not showing actual real life battery draw, but it helps visualize it.
+[**Try the Peak Current Draw Calculator**](https://lekrsu.github.io/shfw-walkthrough/logic/index.html) - A user-friendly tool designed for clarity and efficiency in calculating electrical parameters. Keep in mind, this is peak, not showing actual real life battery draw, but it helps visualize it. Sport, drive and eco curves in Utility, show target battery current, but it is not a limiter, and for low speed compensation, higher current can be temporarily drawn.
 
-<p align="center">
-  <img src="images/I_total.png" width="95%" alt="I_total graph">
-  <center>Graph showing Torque 30A, initial 5A flux, with 100mA increments of variable flux, from the speeds 15 km/h and 25 km/h.</center>
-</p>
-
-#### [Ninebot G30, G2, F2](#ninebot-g30-g2-f2)
+#### [Ninebot G30](#ninebot-g30)
 
 To achieve the top speed for Ninebot G30, follow these configurations:
 
    - Enable "expert view" on the top right.
 
-1. Set sport DPC curve to 25A that's fully quadratic (1.0)
-   - Configure the other modes as desired, preferably lower than sport for logical reasons.
+1. Set sport DPC auto curve to 25A, 0.5 quadratic
+   - Configure the other modes as desired, lower current than sport for less acceleration.
    - Keep the speed limit to off / 0.
    - Acceleration boost, 100%.
-   - Brake boost, 50%.
-   - Overmodulation on for sport/drive
+   - Brake boost, 0-50%, try it out.
+   - Overmodulation on for sport/drive, efficient speed increase by 10%.
 
 You can set eco and drive to lower values, e.g. 10A eco, 25A drive. Drive will use less current since we won't enable field weakening.
 
@@ -127,17 +105,36 @@ You can set eco and drive to lower values, e.g. 10A eco, 25A drive. Drive will u
      - Initial: 0A
      - Variable: 600
 
-   ### Peak speeds, likely to cause issues
+4. Default tire size for Max models are 10", but set 9.4" on G30 to get the dash speed to match GPS speed.
+
+5. Under Motor Settings, select 20 or 24khz.
+
+### [Ninebot G2, F2](#Ninebot-g2-f2)
+
+To achieve the top speed for G2 and F2, follow these configurations:
+
+   - Enable "expert view" on the top right.
+
+1. Set sport DPC auto curve to 25A, 0.5 quadratic
+   - Configure the other modes as desired, lower current than sport for less acceleration.
+   - Keep the speed limit to off / 0.
+   - Acceleration boost, 100%.
+
+You can set eco and drive to lower values, e.g. 10A eco, 25A drive. Drive will use less current since we won't enable field weakening.
+
+2. Go to the field weakening tab and enable field weakening for sport mode:
+
+   ### Normal use:
    - Configure as follows:
      - Speed: 20 km/h
      - Initial: 0A
-     - Variable: 2000
+     - Variable: 1200
 
-4. Default tire size for Max models are 10", but set 9.3" on G30 and 9.7" on G2 and F2 to get the dash speed to match GPS speed.
-
-5. Under Motor Settings, select 20 or 24khz. G2 and F2 doesn't have this option.
-
-Additional information: Newer G30 BMS models might run firmware limited to 28A total battery current. These, will have worse performance compared to the older 40A current models.
+   ### Higher efficiency, less field weakening:
+   - Configure as follows:
+     - Speed: 20 km/h
+     - Initial: 0A
+     - Variable: 600
 
 #### [Xiaomi Pro 2, 3](#xiaomi-pro-2-3)
 
@@ -145,10 +142,9 @@ For Xiaomi Pro 2 and mi3, use the following configurations:
 
    - Enable "expert view" on the top right.
 
-1. Sport mode, DPC, 20A, fully quadratic (1.0).
+1. Sport mode, DPC, auto curve 20A, half quadratic (0.5).
    - Acceleration boost, 100%.
-   - Brake boost, 0-100%, up to you, be aware that it's strong.
-  - Brake, 30A flat (0.0)
+  - Brake, 30A.
   - Overmodulation on for sport/drive
 
 You can set eco and drive to lower values, e.g. 10A eco, 20A drive. Drive will use less current since we won't enable field weakening.
@@ -157,7 +153,7 @@ You can set eco and drive to lower values, e.g. 10A eco, 20A drive. Drive will u
    - Enable field weakening for sport mode.
    - Configure as follows: 20 km/h, 0A, 1500.
 
-4. Under Motor Settings, select 20 or 24khz.
+4. Under Motor Settings, select 20khz.
 
 #### [Xiaomi Essential, Lite, 1S](#xiaomi-essential-lite-1s)
 
@@ -167,7 +163,6 @@ For Xiaomi Essential & 1S, use these configurations:
 
 1. Sport mode, DPC, 18A, fully quadratic (1.0).
    - Acceleration boost, 50%.
-   - Brake boost, 0-100%, up to you, be aware that it's strong.
    - Brake, 30A flat (0.0)
    - Overmodulation on for sport/drive
 
@@ -178,7 +173,7 @@ You can set eco and drive to lower values, e.g. 10A eco, 18A drive. Drive will u
    - Enable field weakening for sport mode.
    - Configure as follows: 15 km/h, 0A, 1500.
 
-4. Under Motor Settings, select 20 or 24khz.
+4. Under Motor Settings, select 20.
 
 #### [Ninebot EsX, Ex](#ninebot-esx-ex)
 
@@ -188,7 +183,6 @@ For Ninebot EsX, Ex, use these configurations:
 
 1. Sport mode, DPC, 18A, fully quadratic (1.0).
    - Acceleration boost, 50%.
-   - Brake boost, 0-100%, up to you, be aware that it's strong.
    - Brake, 55A flat (0.0)
    - Overmodulation on for sport/drive
 
@@ -198,7 +192,7 @@ You can set eco and drive to lower values, e.g. 10A eco, 18A drive. Drive will u
    - Enable field weakening for sport mode.
    - Configure as follows: 15 km/h, 0A, 1500.
 
-4. Under Motor Settings, select 20 or 24khz.
+4. Under Motor Settings, select 20khz.
 
 ## Explanation of PI Control and Acceleration Boost
 
@@ -249,6 +243,8 @@ field weakening flux = initial + ("current speed" - "field weakening start speed
 Here's a graph of the flux current applied at various speeds comparing the following 2 setups:
 - 7A initial current, 24km/h start speed, 1500mA/km/h variable current
 - 0A initial current, 24km/h start speed, 1500mA/km/h variable current
+
+So as to summarize the graph, initial adds field weakening at field weakening speed, with additional current per km/h as per set variable current. Initial current can be used to get over the needed threshhold to reach higher field weakening current by variable. Too much field weakening will just cause heating and potential harm, while too little will limit your speed. It is however optimal for motor and battery performance to not use field weakening at all.
 
 <!-- ![graph comparing the above mentioned field weakening setups](/images/comparison_graph.png) -->
 
