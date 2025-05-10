@@ -118,7 +118,7 @@ To achieve the top speed for G2 and F2, follow these configurations:
 1. Set sport DPC auto curve to 25A, 0.5 quadratic
    - Configure the other modes as desired, lower current than sport for less acceleration.
    - Keep the speed limit to off / 0.
-   - Acceleration boost, 100%.
+   - Acceleration boost, 100%. However if it turns off, decrease this percentage.
 
 You can set eco and drive to lower values, e.g. 10A eco, 25A drive. Drive will use less current since we won't enable field weakening.
 
@@ -143,7 +143,7 @@ For Xiaomi Pro 2 and mi3, use the following configurations:
    - Enable "expert view" on the top right.
 
 1. Sport mode, DPC, auto curve 20A, half quadratic (0.5).
-   - Acceleration boost, 100%.
+   - Acceleration boost, 100%. If it turns off, decrease this.
   - Brake, 30A.
   - Overmodulation on for sport/drive
 
