@@ -119,6 +119,7 @@ To achieve the top speed for G2 and F2, follow these configurations:
    - Configure the other modes as desired, lower current than sport for less acceleration.
    - Keep the speed limit to off / 0.
    - Acceleration boost, 100%. However if it turns off, decrease this percentage.
+   - Brake overshoot to 45A, reduces risk of overcurrent from brake activation.
 
 You can set eco and drive to lower values, e.g. 10A eco, 25A drive. Drive will use less current since we won't enable field weakening.
 
