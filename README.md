@@ -85,7 +85,7 @@ To achieve the top speed for Ninebot G30, follow these configurations:
 1. Set sport DPC auto curve to 25A, 0.5 quadratic
    - Configure the other modes as desired, lower current than sport for less acceleration.
    - Keep the speed limit to off / 0.
-   - Acceleration boost, 100%.
+   - Acceleration boost, 50%.
    - Brake boost, 0-50%, try it out.
    - Overmodulation on for sport/drive, efficient speed increase by 10%.
 
