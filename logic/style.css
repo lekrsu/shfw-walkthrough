@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background */
+    color: white; /* Light text for readability in dark mode */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.input-section label {
+    display: block;
+    margin-top: 20px;
+    color: white; /* Ensuring text is visible in dark mode */
+}
+
+.input-section input,
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #333; /* Darker elements to fit dark mode */
+    border: 1px solid #444; /* Subtle border in dark mode */
+    color: white; /* Text color in inputs and buttons */
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+    }
+
+    .input-section input,
+    button {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

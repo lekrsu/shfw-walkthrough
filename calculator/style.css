@@ -1,0 +1,46 @@
+/* Apply a dark background color to the entire calculator */
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the calculator container */
+h1 {
+    font-size: 24px;
+}
+
+/* Style the input field */
+input[type="number"] {
+    width: 300px;
+    padding: 10px;
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #666;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Style the Calculate button */
+button {
+    padding: 10px 20px;
+    background-color: #007acc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the result div */
+#result {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #555;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Change button style on hover */
+button:hover {
+    background-color: #005a9e;
+}
