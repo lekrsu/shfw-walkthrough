@@ -109,7 +109,7 @@ You can set eco and drive to lower values, e.g. 10A eco, 25A drive. Drive will u
 
 5. Under Motor Settings, select 20 or 24khz.
 
-### [Ninebot G2, F2](#Ninebot-g2-f2)
+#### [Ninebot G2, F2](#ninebot-g2-f2)
 
 To achieve the top speed for G2 and F2, follow these configurations:
 
@@ -137,16 +137,41 @@ You can set eco and drive to lower values, e.g. 10A eco, 25A drive. Drive will u
      - Initial: 0A
      - Variable: 600
 
-#### [Xiaomi Pro 2, 3](#xiaomi-pro-2-3)
+#### [Xiaomi Pro 2](#xiaomi-pro-2)
 
-For Xiaomi Pro 2 and mi3, use the following configurations:
+Configuration for this model depends on the battery serial number and firmware version:
 
-   - Enable "expert view" on the top right.
+Enable "expert view" on the top right.
 
-1. Sport mode, DPC, auto curve 20A, half quadratic (0.5).
-   - Acceleration boost, 100%. If it turns off, decrease this.
-  - Brake, 30A.
-  - Overmodulation on for sport/drive
+### Battery serial number starting with `4XFG` *AND* BMS firmware version with 3 numbers (e.g. 1.4.1) instead of 4 numbers:
+   1. Sport mode, DPC, auto curve 30A, half quadratic (0.5):
+      - Acceleration boost set to 100%.
+      - Brake boost set to 100%.
+      - Overmodulation on for sport/drive.
+
+### Battery serial number starting with `BFFG` *OR* BMS firmware version with 4 numbers (e.g. 1.1.0.2) instead of 3 numbers:
+   1. Sport mode, DPC, auto curve 20A, half quadratic (0.5):
+      - Acceleration boost set to 80%.
+      - Brake boost set to 100%.
+      - Overmodulation on for sport/drive.
+
+You can set eco and drive to lower values, e.g. 10A eco, 20A drive. Drive will use less current since we won't enable field weakening.
+
+2. Go to the field weakening tab and:
+   - Enable field weakening for sport mode.
+   - Configure as follows: 20 km/h, 0A, 1500.
+
+4. Under Motor Settings, select 20khz.
+
+#### [Xiaomi Mi 3](#xiaomi-mi-3)
+
+For this model, use the following configurations:
+Enable "expert view" on the top right.
+
+1. Sport mode, DPC, auto curve 20A, half quadratic (0.5):
+    - Acceleration boost set to 90%. If the vehicle turns off, decrease this.
+    - Brake boost set to 100%.
+    - Overmodulation on for sport/drive
 
 You can set eco and drive to lower values, e.g. 10A eco, 20A drive. Drive will use less current since we won't enable field weakening.
 
@@ -163,9 +188,9 @@ For Xiaomi Essential & 1S, use these configurations:
    - Enable "expert view" on the top right.
 
 1. Sport mode, DPC, 18A, fully quadratic (1.0).
-   - Acceleration boost, 50%.
-   - Brake, 30A flat (0.0)
-   - Overmodulation on for sport/drive
+   - Acceleration boost set to 50%.
+   - Brake set to 30A, flat (0.0), if your brake feels weak, slowly increase the brake boost setting.
+   - Overmodulation on for sport/drive.
 
 You can set eco and drive to lower values, e.g. 10A eco, 18A drive. Drive will use less current since we won't enable field weakening.
   
