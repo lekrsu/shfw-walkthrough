@@ -24,7 +24,7 @@ To install SHFW, follow these steps:
   
       - **Ninebot ESx**: Every version is supported.
      
-      - **Exx Series**: [Not E2, E2 Plus, E2 Pro. Only the older E22, E45, etc] You can flash SHFW if the DRV version is below 2.7.0. Else you will need to use a ST-Link.
+      - **Exx Series**: [Not E2, E2 Plus, E2 Pro. Only the older E22, E45, etc] You can flash SHFW if the DRV version is below 2.7.0. Else you will need to use a ST-Link. It may be possible to use https://t.me/downgrade_ninebot (Exx Series is in Beta; see https://www.youtube.com/watch?v=WXCJJVfrrk0).
   
       - **Ninebot F-Series**: [Older SHFW 0.3.6] You can flash this firmware if the DRV version is below 5.7.0. Else you will need to use a ST-Link. There are online guides available for this process. The app will prompt for updates even if there's none, be aware. Needs to flash with up to date Utility, then configured with [Utility 2.5](https://utility.cfw.sh/distrib/ScooterHackingUtility-2.5.apk). Do not enable brake boost.
   
