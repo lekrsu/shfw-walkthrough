@@ -30,7 +30,7 @@ To install SHFW, follow these steps:
   
       - **Ninebot D-Series**: [Currently not working] There is an experimental support for D-Series using the F-Series firmware. It's not known at which DRV version you will need a ST-Link. The guides should be identical to the F-Series.
 
-   - **Xiaomi Scooters**: If the BLE version is at 1.5.5 or above, then you'll need to ST-Link downgrade the dashboard. [ST-Link Downgrade Guide](https://lekrsu.github.io/shfw-walkthrough/stlinking/xiaomi-ble). Flashing on M365 with a 4-dot dashboard requires extra steps detailed in the [4th section of installation](https://lekrsu.github.io/shfw-walkthrough/stlinking/xiaomi-ble#installation). Attempt DRV downgrade via our app if flashing SHFW fails with a supported BLE version.
+   - **Xiaomi Scooters**: If the BLE version is at 1.5.5 or above, then you'll need to ST-Link downgrade the dashboard. [ST-Link Downgrade Guide](https://lekrsu.github.io/shfw-walkthrough/stlinking/xiaomi-ble). Attempt DRV downgrade via our app (ScooterHacking Utility) if flashing SHFW fails with a supported BLE version.
 
     [Reflasher](https://www.scooterhacking.org/forum/viewtopic.php?t=676), [Webflasher](https://flash.bastelpichi.de/) and [ScooterFlasher](https://github.com/scooterteam/scooterflasher) are programs used for ST-Linking, choose either one if it's needed. 
 
