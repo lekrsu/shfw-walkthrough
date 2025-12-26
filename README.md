@@ -14,7 +14,7 @@ Join the discussions on [Telegram](https://t.me/scooterhackingchat) and [Discord
 
 To install SHFW, follow these steps:
 
-1. Download our official app [Utility](https://utility.cfw.sh/), alternatively for wide range device support, including iOS, check out [Luna](https://luna.cfw.sh/).
+1. Download our official app [Utility](https://utility-beta.cfw.sh/), alternatively for wide range device support, including iOS, check out [Luna](https://luna.cfw.sh/).
 
 2. Supported Scooter Models:
 
