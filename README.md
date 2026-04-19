@@ -64,23 +64,11 @@ To install SHFW, follow these steps:
 
 ### Usage
 
-Please be aware that the information provided below is intended for practical use, but it should be used with caution. Remember, field weakening, by its nature, will not be efficient.
-
-#### Peak Current Draw Calculator Features
-
-- **Torque Amps Calculation**: Users can input their torque amps (Iq) to calculate the torque component accurately.
-- **Field Weakening Calculation**: By entering the initial flux in A, variable flux in mAh, current max speed in km/h, and start speed in km/h, the calculator determines the flux component (Id), incorporating field weakening effects.
-- **Peak Current Draw**: With the input parameters, the calculator computes the peak current draw (I_total), providing essential insights into the system's maximum electrical demand.
-
-To customize these phase limits, check out the Iq and Id sliders under "Field Weakening".
-
-[**Try the Peak Current Draw Calculator**](https://lekrsu.github.io/shfw-walkthrough/logic/index.html) - A user-friendly tool designed for clarity and efficiency in calculating electrical parameters. Keep in mind, this is peak, not showing actual real life battery draw, but it helps visualize it. Sport, drive and eco curves in Utility, show target battery current, but it is not a limiter, and for low speed compensation, higher current can be temporarily drawn.
+Please be aware that the information provided below is intended for practical use, but it should be used with caution. Field weakening will not be energy efficient.
 
 #### [Ninebot G30](#ninebot-g30)
 
 To achieve the top speed for Ninebot G30, follow these configurations:
-
-   - Enable "expert view" on the top right.
 
 1. Set sport DPC auto curve to 25A, 0.5 quadratic
    - Configure the other modes as desired, lower current than sport for less acceleration.
@@ -113,13 +101,10 @@ You can set eco and drive to lower values, e.g. 10A eco, 25A drive. Drive will u
 
 To achieve the top speed for G2 and F2, follow these configurations:
 
-   - Enable "expert view" on the top right.
-
 1. Set sport DPC auto curve to 25A, 0.5 quadratic
    - Configure the other modes as desired, lower current than sport for less acceleration.
    - Keep the speed limit to off / 0.
-   - Acceleration boost, 100%. However if it turns off, decrease this percentage.
-   - Brake overshoot to 45A, reduces risk of overcurrent from brake activation.
+   - Acceleration boost, 50%. 
 
 You can set eco and drive to lower values, e.g. 10A eco, 25A drive. Drive will use less current since we won't enable field weakening.
 
@@ -139,19 +124,8 @@ You can set eco and drive to lower values, e.g. 10A eco, 25A drive. Drive will u
 
 #### [Xiaomi Pro 2](#xiaomi-pro-2)
 
-Configuration for this model depends on the battery serial number and firmware version:
-
-Enable "expert view" on the top right.
-
-### Battery serial number starting with `4XFG` *AND* BMS firmware version with 3 numbers (e.g. 1.4.1) instead of 4 numbers:
    1. Sport mode, DPC, auto curve 30A, half quadratic (0.5):
       - Acceleration boost set to 100%.
-      - Brake boost set to 100%.
-      - Overmodulation on for sport/drive.
-
-### Battery serial number starting with `BFFG` *OR* BMS firmware version with 4 numbers (e.g. 1.1.0.2) instead of 3 numbers:
-   1. Sport mode, DPC, auto curve 20A, half quadratic (0.5):
-      - Acceleration boost set to 80%.
       - Brake boost set to 100%.
       - Overmodulation on for sport/drive.
 
@@ -164,9 +138,6 @@ You can set eco and drive to lower values, e.g. 10A eco, 20A drive. Drive will u
 4. Under Motor Settings, select 20khz.
 
 #### [Xiaomi Mi 3](#xiaomi-mi-3)
-
-For this model, use the following configurations:
-Enable "expert view" on the top right.
 
 1. Sport mode, DPC, auto curve 20A, half quadratic (0.5):
     - Acceleration boost set to 90%. If the vehicle turns off, decrease this.
@@ -185,11 +156,9 @@ You can set eco and drive to lower values, e.g. 10A eco, 20A drive. Drive will u
 
 For Xiaomi Essential & 1S, use these configurations:
 
-   - Enable "expert view" on the top right.
-
 1. Sport mode, DPC, 18A, fully quadratic (1.0).
    - Acceleration boost set to 50%.
-   - Brake set to 30A, flat (0.0), if your brake feels weak, slowly increase the brake boost setting.
+   - Brake set to 30A, flat (0.0).
    - Overmodulation on for sport/drive.
 
 You can set eco and drive to lower values, e.g. 10A eco, 18A drive. Drive will use less current since we won't enable field weakening.
@@ -209,7 +178,7 @@ For Ninebot EsX, Ex, use these configurations:
 
 1. Sport mode, DPC, 18A, fully quadratic (1.0).
    - Acceleration boost, 50%.
-   - Brake, 55A flat (0.0)
+   - Brake, 45A flat (0.0)
    - Overmodulation on for sport/drive
 
 You can set eco and drive to lower values, e.g. 10A eco, 18A drive. Drive will use less current since we won't enable field weakening.
@@ -220,101 +189,11 @@ You can set eco and drive to lower values, e.g. 10A eco, 18A drive. Drive will u
 
 4. Under Motor Settings, select 20khz.
 
-## Explanation of PI Control and Acceleration Boost
-
-### PI Control for Voltage Time Conversion
-
-The PI control system converts amperes into voltage time. This process scales the voltage time from 0 to 31128, where 31128 represents 100%. This scaling is done for both current components. If the total time exceeds 31128, the values are adjusted down to a new value accordingly.
-
-### Voltage Measurement and Compensation
-
-The system measures only the voltage time, using a 100% duty cycle at maximum potential speed. This method allows the system to perform consistently at different voltages without requiring firmware adjustments. The PWM (Pulse Width Modulation) cycle is kept high continuously, operating similarly to a DC engine.
-
-### Implementation Specifics
-
-- **16-bit Counters:** The system uses 16-bit counters to implement PWM. The counters stop 4 loops before the end of the frequency.
-- **Duty Cycle Limit:** The duty cycle is limited to 95%, as achieving 100% is theoretically possible but impractical.
-- **Voltage Relevance:** Voltage is not directly relevant for control. Instead, the control manages the phase duration. For example:
-  - Phase A might be high for 10 ms
-  - Phase B might be high for 5 ms
-  - Phase C might be high for a shorter duration
-
-However, it is important to note that the actual phase times are much shorter than these examples.
-
-### Acceleration Boost
-
-The Acceleration Boost feature allows for enhanced motor response by temporarily increasing the target current during acceleration. This is controlled via a 0-100% slider, which adjusts the boost intensity.
-
-When the slider is set, the system requests a higher current for a short duration, effectively doubling the target current when the slider is at 100%. For instance, setting the slider to 50% increases the requested current to 150% of the original target. This temporary boost enables the motor to achieve quicker acceleration without permanently raising the current limit.
-
-However, this technique results in increased electricity consumption as the system draws additional power during the acceleration phase. The necessary energy for this boost is sourced from the battery, leading to a higher overall power usage.
-
-### Field Weakening Calculations and Logic
-
-#### What is Field Weakening?
-
-Field weakening is a technique commonly used with 3-phase electric motors to achieve higher speeds in electric vehicles like scooters. It allows the motor to operate beyond its rated voltage and rpm, which can result in increased top speed. However, implementing field weakening comes with trade-offs, including increased battery usage, higher motor temperatures, and potential additional expenses.
-
-#### Field Weakening Flux Calculation
-
-The calculation for field weakening flux is as follows:
-
-field weakening flux = initial + ("current speed" - "field weakening start speed") * (variable / 1000)
-
-- `initial`: The initial value of the field weakening flux.
-- `"current speed"`: The current speed of the scooter.
-- `"field weakening start speed"`: The speed at which field weakening should start.
-- `variable`: A parameter that influences the rate of flux increase.
-
-Here's a graph of the flux current applied at various speeds comparing the following 2 setups:
-- 7A initial current, 24km/h start speed, 1500mA/km/h variable current
-- 0A initial current, 24km/h start speed, 1500mA/km/h variable current
-
-So as to summarize the graph, initial adds field weakening at field weakening speed, with additional current per km/h as per set variable current. Initial current can be used to get over the needed threshhold to reach higher field weakening current by variable. Too much field weakening will just cause heating and potential harm, while too little will limit your speed. It is however optimal for motor and battery performance to not use field weakening at all.
-
-<!-- ![graph comparing the above mentioned field weakening setups](/images/comparison_graph.png) -->
-
-<p align="center">
-  <img src="images/comparison_graph.png" width="95%" alt="Field weakening graph">
-</p>
-
-### Custom batteries and BMS emulation
-
-After installing a custom battery in specific scooter models, you might notice that the display no longer shows the battery charge percentage. This occurs because the scooter's original Battery Management System (BMS) uses a communication cable to provide this information, among other functions. As a workaround, BMS emulation can be employed. This method calculates the battery's charge level based purely on the system's voltage, a viable approach due to the linear relationship between voltage and charge state.
-
-For configuration, access the Utility app and navigate to the 'Config' tab. Here, you will find the BMS emulation option towards the bottom. In this section, enter the details of your battery, including the number of series groups and the total capacity. It's crucial to ensure the minimum and maximum cell group voltages are set correctly, ideally matching or being more conservative than those specified by your BMS. The voltage range for a Li-Ion cell typically spans from 3 to 4.2V, but your BMS may have specific cutoff limits for charging and discharging. Adjust these settings according to your BMS's limits or opt for the default if uncertain.
-
-Note, BMS emulation is necessary only if you've completely replaced the original battery. If you've added an additional pack in series with matching or higher capacity, or if you have another battery in parallel, BMS emulation is not required. In cases of parallel battery configurations, the primary adjustment needed is to disable the charging mode, which can be found in the system settings. This guide aims to facilitate a seamless transition to custom battery usage, ensuring optimal performance and compatibility.
-
-Given:
-- `V_min` = Minimum voltage of the battery pack when fully discharged.
-- `V_max` = Maximum voltage of the battery pack when fully charged.
-- `V_current` = Current voltage of the battery pack.
-
-The formula to calculate the battery percentage (`Battery_%`) is:
-
-Battery_% = ((V_current - V_min) / (V_max - V_min)) * 100
-
-Where:
-- `Battery_%` is the state of charge of the battery pack as a percentage.
-- `V_min` is the total voltage of the pack when all cells are at their minimum voltage.
-- `V_max` is the total voltage of the pack when all cells are at their maximum voltage.
-- `V_current` is the current total voltage of the battery pack.
-
-<p align="center">
-  <img src="images/current.gif" width="75%" alt="Ant bms gif showing current use ">
-  <center>Example of what I_total of 42A actually looks on a flat road while requesting 30A torque, 30A flux.</center>
-</p>
-
-#### ADC modding info (G30 & ESx)
-
-Special thanks to BXLR for providing valuable information on the R_adc logic.
+#### ADC modding info (G30)
 
 [Open Calculator](https://lekrsu.github.io/shfw-walkthrough/calculator/)
 
-**Note1**: Make sure to adjust R_adc, as it plays a significant role in ADC modding.
-**Note2**: You can also measure your battery voltage and then increase the divider voltage until the system voltage reading matches your previous meassuring.
-**Note3**: You only need to touch this setting once you changed the resistors on the esc. 
+You only need to touch this setting once you changed the resistors on the esc. 
 
 ### License
 
