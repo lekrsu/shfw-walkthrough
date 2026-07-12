@@ -2,25 +2,27 @@
 
 SHFW is a custom firmware available for flashing via the Scooterhacking Utility app. Configuring it might be challenging for new users. This guide aims to provide a quick and easy way to apply the important basics. The understanding aspect of all this can be overwhelming, but it will come as a side effect of your own testing and thinking as we can't do that for you.
 
-Join the discussions on [Telegram](https://t.me/scooterhackingchat) and [Discord](https://scooterhack.in/discord).
+Join the English discussions on [Telegram](https://t.me/scooterhackingchat) and [Discord](https://scooterhack.in/discord), or the German [Discord](https://discord.gg/QgRwYEKn8k).
 <p align="left">
   <a href="https://discord.gg/scooterhacking" target="_blank">
     <img src="https://dcbadge.limes.pink/api/server/https://discord.gg/scooterhacking"/>
   </a>
+  <a href="https://discord.gg/QgRwYEKn8k" target="_blank">
+    <img src="https://dcbadge.limes.pink/api/server/https://discord.gg/QgRwYEKn8k"/>
+  </a>
 </p>
-
 
 ### Installation
 
 To install SHFW, follow these steps:
 
-1. Download our official app [Utility](https://utility-beta.cfw.sh/), alternatively for wide range device support, including iOS, check out [Luna](https://luna.cfw.sh/).
+1. Download our official app [Utility](https://utility.cfw.sh/), alternatively for legacy support check out [Luna](https://luna.cfw.sh/).
 
 2. Supported Scooter Models:
 
-      - **Ninebot G30, G30L**: You can flash this firmware if the DRV version is at 1.7.3 or below. If your DRV is 1.7.3, you need to select "Attempt Downgrade" before SHFW. For DRV versions above 1.7.3, you'll need an ST-Link. Refer to [this](https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC) for more information.
+      - **Ninebot G30, G30L**: You can flash this firmware if the DRV version is at 1.7.3 or below. If your DRV is 1.7.3, you need to select "Attempt Downgrade" in Utility 2.7 before SHFW. For DRV versions above 1.7.3, you'll need an ST-Link. Refer to [this](https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC) for more information.
 
-      - **Ninebot G2, F2, F2 Plus, F2 Pro**: Every regional model is compatible, needs to be unlocked via ST-Link.
+      - **Ninebot G2, F2, F2 Plus, F2 Pro**: Every model is compatible but needs to be unlocked via ST-Link.
   
       - **Ninebot ESx**: Every version is supported.
      
@@ -32,25 +34,33 @@ To install SHFW, follow these steps:
 
    - **Xiaomi Scooters**: If the BLE version is at 1.5.5 or above, then you'll need to ST-Link downgrade the dashboard. [ST-Link Downgrade Guide](https://lekrsu.github.io/shfw-walkthrough/stlinking/xiaomi-ble). Attempt DRV downgrade via our app (ScooterHacking Utility) if flashing SHFW fails with a supported BLE version.
 
-    [Reflasher](https://www.scooterhacking.org/forum/viewtopic.php?t=676), [Webflasher](https://flash.bastelpichi.de/) and [ScooterFlasher](https://github.com/scooterteam/scooterflasher) are programs used for ST-Linking, choose either one if it's needed. 
-
-    | Model | Compatible BLE | Compatible DRV |
+    | Model | Compatible BLE | Compatible DRV | 
     |:--|:--|:--|
     |  | *ST-Link if incompatible* | *ST-Link if incompatible* |
     | Ninebot G30 | All | [Up to 1.7.3](https://joeybabcock.me/wiki/STLink_Ninebot_Max_ESC) |
     | Ninebot G2 | All | ST-Link |
     | Ninebot F2, F2 Plus, F2 Pro | All | ST-Link |
     | Xiaomi Essential, 1s, Pro 2, 3 | Below 1.5.5 | All |
-    | Ninebot EsX | All | All |
+    | Ninebot ESx | All | All |
     | Ex Series | All | Below 2.7.0 |
-    | Ninebot E2, E2D, E2 Pro | N/A | N/A |
-    | Ninebot F-Series | All | Below 5.7.0 |
-    | Ninebot D-Series | All  | Experimental (F-Series firmware, unknown) |
+    | Ninebot E2, E2 Plus, E2 Pro | N/A | N/A |
+    | Ninebot F-Series (not maintained)| All | Below 5.7.0 |
+    | Ninebot D-Series (not maintained)| All  | N/A |
+
+    For the models above; [Reflasher](https://www.scooterhacking.org/forum/viewtopic.php?t=676), [Webflasher](https://flash.bastelpichi.de/) and [ScooterFlasher](https://github.com/scooterteam/scooterflasher) are programs used for ST-Linking, choose either one if it's needed. Webflasher has native F2 AT32 support, for GD32 see the [English Discord pin](https://discord.com/channels/550154171433615364/577551709057056768/1520409282762248324) for details.
+  
+    | Model | VCU | MCU | BLE | BMS | Notes |
+    |:--|:--|:--|:--|:--|:--|
+    | Ninebot G3, F3, GT3 | ST-Link | ST-Link | All | All | Flash unlock supported, regional unlock without flashing |
+    | Ninebot ZT3 Pro | ST-Link | ST-Link | All | All | Flash unlock supported |
+    | Ninebot E3, E3 Pro | ST-Link | ST-Link | All | All | No flash unlock |
+  
+    VCU is what restricts against region change. Models above are not SHFW compatible; however, most are compatible with patched firmware allowing regional features and unrestricted flashing, see the column above for exceptions (E3 and E3 Pro do not support flash unlock). [x3utils](https://github.com/ztakis/x3utils) is a ST-LINK utility for X3 / 3rd-generation scooters.
 
 3. Flash Procedure:
 
    - Open the utility app, connect to the scooter.
-   - Press "Install/update SHFW" and select the version of the highest number, if there are multiple choices. Then, press flash. If it fails, and the above grid claims a supported version, try the "attempt drv downgrade" flash before SHFW.
+   - Press "Install/update SHFW" and select the highest available version number, if there are multiple choices.
       - If you have the newer Gen 3 G30 motor then select the new motor option under the motor config tab. This is automatic with original serial. If you don't know which one you have, compare the motor serial to this:
 
       | Motor Serial Number (SN) | Generation           | Models                               |
@@ -60,6 +70,7 @@ To install SHFW, follow these steps:
       | Includes PCAH            | Third Generation     | G30P                                 |
       | Includes PAAH            | Third Generation     | G30E                                 |
       | Includes PADH/PADJ       | Third Generation     | G30D                                 |
+
       
 
 ### Usage
@@ -68,128 +79,90 @@ Please be aware that the information provided below is intended for practical us
 
 #### [Ninebot G30](#ninebot-g30)
 
-To achieve the top speed for Ninebot G30, follow these configurations:
-
-1. Set sport DPC auto curve to 25A, 0.5 quadratic
+1. Set sport DPC auto curve to 30A. Reduce if system shuts off.
    - Configure the other modes as desired, lower current than sport for less acceleration.
    - Keep the speed limit to off / 0.
-   - Acceleration boost, 50%.
-   - Brake boost, 0-50%, try it out.
-   - Overmodulation on for sport/drive, efficient speed increase by 10%.
+   - Acceleration boost, adjust by feel. Reduce if system shuts off.
+   - Brake curve, increase if weak. 30A is moderate.
+   - Brake boost, adjust by feel.
+   - Overmodulation on for sport/drive, efficient speed increase by 10% or less.
+   - Keep Iq and Id default limits and enable automatic field weakening for sport mode.
 
-You can set eco and drive to lower values, e.g. 10A eco, 25A drive. Drive will use less current since we won't enable field weakening.
+2. You can set eco and drive to lower values, e.g. 10A eco, 30A drive. Drive will use less current since we won't enable field weakening.
 
-2. Go to the field weakening tab and enable field weakening for sport mode:
+3. Default tire size for Max models are 10", but set 9.4" on G30 to get the dash speed to closer match GPS speed.
 
-   ### Normal use:
-   - Configure as follows:
-     - Speed: 20 km/h
-     - Initial: 0A
-     - Variable: 1200
+#### [Ninebot G2, F2, F2 Plus, F2 Pro](#ninebot-g2-f2)
 
-   ### Higher efficiency, less field weakening:
-   - Configure as follows:
-     - Speed: 20 km/h
-     - Initial: 0A
-     - Variable: 600
-
-4. Default tire size for Max models are 10", but set 9.4" on G30 to get the dash speed to match GPS speed.
-
-5. Under Motor Settings, select 20 or 24khz.
-
-#### [Ninebot G2, F2](#ninebot-g2-f2)
-
-To achieve the top speed for G2 and F2, follow these configurations:
-
-1. Set sport DPC auto curve to 25A, 0.5 quadratic
+1. Set sport DPC auto curve to 30A. Reduce if system shuts off.
    - Configure the other modes as desired, lower current than sport for less acceleration.
    - Keep the speed limit to off / 0.
-   - Acceleration boost, 50%. 
+   - Acceleration boost, adjust by feel. Reduce if system shuts off.
+   - Brake curve, increase if weak. 30A is moderate.
+   - Brake boost, adjust by feel.
+   - Keep Iq and Id default limits and enable automatic field weakening for sport mode.
 
-You can set eco and drive to lower values, e.g. 10A eco, 25A drive. Drive will use less current since we won't enable field weakening.
-
-2. Go to the field weakening tab and enable field weakening for sport mode:
-
-   ### Normal use:
-   - Configure as follows:
-     - Speed: 20 km/h
-     - Initial: 0A
-     - Variable: 1200
-
-   ### Higher efficiency, less field weakening:
-   - Configure as follows:
-     - Speed: 20 km/h
-     - Initial: 0A
-     - Variable: 600
+2. You can set eco and drive to lower values, e.g. 10A eco, 30A drive. Drive will use less current since we won't enable field weakening.
 
 #### [Xiaomi Pro 2](#xiaomi-pro-2)
 
-   1. Sport mode, DPC, auto curve 30A, half quadratic (0.5):
-      - Acceleration boost set to 100%.
-      - Brake boost set to 100%.
-      - Overmodulation on for sport/drive.
+1. Set sport DPC auto curve to 30A. Reduce if system shuts off.
+   - Configure the other modes as desired, lower current than sport for less acceleration.
+   - Keep the speed limit to off / 0.
+   - Acceleration boost, adjust by feel. Reduce if system shuts off.
+   - Brake curve, increase if weak. 30A is moderate.
+   - Brake boost, adjust by feel.
+   - Overmodulation on for sport/drive, efficient speed increase by 10% or less.
+   - Keep Iq and Id default limits and enable automatic field weakening for sport mode.
 
-You can set eco and drive to lower values, e.g. 10A eco, 20A drive. Drive will use less current since we won't enable field weakening.
+2. You can set eco and drive to lower values, e.g. 10A eco, 30A drive. Drive will use less current since we won't enable field weakening.
 
-2. Go to the field weakening tab and:
-   - Enable field weakening for sport mode.
-   - Configure as follows: 20 km/h, 0A, 1500.
+#### [Xiaomi Mi 3, 1S](#xiaomi-mi-3-1s)
 
-4. Under Motor Settings, select 20khz.
+1. Set sport DPC auto curve to 20A. Reduce if system shuts off.
+   - Configure the other modes as desired, lower current than sport for less acceleration.
+   - Keep the speed limit to off / 0.
+   - Acceleration boost, adjust by feel. Reduce if system shuts off.
+   - Brake curve, increase if weak. 30A is moderate.
+   - Brake boost, adjust by feel.
+   - Overmodulation on for sport/drive, efficient speed increase by 10% or less.
+   - Keep Iq and Id default limits and enable automatic field weakening for sport mode.
 
-#### [Xiaomi Mi 3](#xiaomi-mi-3)
+2. You can set eco and drive to lower values, e.g. 10A eco, 20A drive. Drive will use less current since we won't enable field weakening.
 
-1. Sport mode, DPC, auto curve 20A, half quadratic (0.5):
-    - Acceleration boost set to 90%. If the vehicle turns off, decrease this.
-    - Brake boost set to 100%.
-    - Overmodulation on for sport/drive
+#### [Xiaomi Essential, Lite](#xiaomi-essential-lite)
 
-You can set eco and drive to lower values, e.g. 10A eco, 20A drive. Drive will use less current since we won't enable field weakening.
+For Xiaomi Essential/Lite, use these configurations:
 
-2. Go to the field weakening tab and:
-   - Enable field weakening for sport mode.
-   - Configure as follows: 20 km/h, 0A, 1500.
+1. Set sport DPC auto curve to 18A. Reduce if system shuts off.
+   - Configure the other modes as desired, lower current than sport for less acceleration.
+   - Keep the speed limit to off / 0.
+   - Acceleration boost, adjust by feel. Reduce if system shuts off.
+   - Brake curve, increase if weak. 30A is moderate.
+   - Brake boost, adjust by feel.
+   - Overmodulation on for sport/drive, efficient speed increase by 10% or less.
+   - Keep Iq and Id default limits and enable automatic field weakening for sport mode.
 
-4. Under Motor Settings, select 20khz.
+2. You can set eco and drive to lower values, e.g. 10A eco, 18A drive. Drive will use less current since we won't enable field weakening.
 
-#### [Xiaomi Essential, Lite, 1S](#xiaomi-essential-lite-1s)
-
-For Xiaomi Essential & 1S, use these configurations:
-
-1. Sport mode, DPC, 18A, fully quadratic (1.0).
-   - Acceleration boost set to 50%.
-   - Brake set to 30A, flat (0.0).
-   - Overmodulation on for sport/drive.
-
-You can set eco and drive to lower values, e.g. 10A eco, 18A drive. Drive will use less current since we won't enable field weakening.
-  
-2. Go to the field weakening tab and:
-
-   - Enable field weakening for sport mode.
-   - Configure as follows: 15 km/h, 0A, 1500.
-
-4. Under Motor Settings, select 20.
-
-#### [Ninebot EsX, Ex](#ninebot-esx-ex)
+#### [Ninebot ESx, Ex](#ninebot-esx-ex)
 
 For Ninebot EsX, Ex, use these configurations:
 
    - Enable "expert view" on the top right.
 
-1. Sport mode, DPC, 18A, fully quadratic (1.0).
+1. Sport mode, DPC, 18A
    - Acceleration boost, 50%.
-   - Brake, 45A flat (0.0)
+   - Brake, 45A
    - Overmodulation on for sport/drive
 
-You can set eco and drive to lower values, e.g. 10A eco, 18A drive. Drive will use less current since we won't enable field weakening.
+2. You can set eco and drive to lower values, e.g. 10A eco, 18A drive. Drive will use less current since we won't enable field weakening.
   
-2. Go to the field weakening tab and:
+3. Go to the field weakening tab and:
    - Enable field weakening for sport mode.
    - Configure as follows: 15 km/h, 0A, 1500.
 
-4. Under Motor Settings, select 20khz.
-
-#### ADC modding info (G30)
+#### ADC modding calculation (G30)
 
 [Open Calculator](https://lekrsu.github.io/shfw-walkthrough/calculator/)
 
