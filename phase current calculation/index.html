@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase Current Calculator</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #0b0d0f;
+    --surface:   #111417;
+    --border:    #1e2328;
+    --accent:    #00e5a0;
+    --accent2:   #00aeff;
+    --dim:       #3a4048;
+    --text:      #c8ced6;
+    --label:     #5a6370;
+    --mono:      'IBM Plex Mono', monospace;
+    --sans:      'Barlow', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 400;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px 60px;
+  }
+
+  header {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 36px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 16px;
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+  }
+  header h1 {
+    font-family: var(--mono);
+    font-size: 1.05rem;
+    color: var(--accent);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .main {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .controls {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .ctrl-section-label {
+    font-family: var(--mono);
+    font-size: .65rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--label);
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+  .field:last-child { margin-bottom: 0; }
+
+  .field label {
+    font-family: var(--mono);
+    font-size: .7rem;
+    color: var(--label);
+    letter-spacing: .1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .field label .lname { color: var(--text); font-size: .72rem; }
+
+  .field input[type="number"] {
+    background: var(--bg);
+    border: 1px solid var(--dim);
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: .95rem;
+    padding: 8px 12px;
+    width: 100%;
+    outline: none;
+    transition: border-color .15s;
+    -moz-appearance: textfield;
+  }
+  .field input[type="number"]::-webkit-inner-spin-button,
+  .field input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; }
+  .field input[type="number"]:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent)22;
+  }
+
+  .field input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 3px;
+    background: var(--dim);
+    outline: none;
+    cursor: pointer;
+  }
+  .field input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px; height: 14px;
+    background: var(--accent);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 6px var(--accent)88;
+  }
+  .field input[type="range"]::-moz-range-thumb {
+    width: 14px; height: 14px;
+    background: var(--accent);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .readout {
+    margin-top: 8px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 14px 16px;
+  }
+  .readout-label {
+    font-family: var(--mono);
+    font-size: .62rem;
+    color: var(--label);
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .readout-value {
+    font-family: var(--mono);
+    font-size: 1.6rem;
+    color: var(--accent2);
+    line-height: 1;
+  }
+  .readout-sub {
+    font-family: var(--mono);
+    font-size: .62rem;
+    color: var(--label);
+    margin-top: 4px;
+  }
+
+  .chart-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 24px;
+    position: relative;
+  }
+  .chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .chart-title {
+    font-family: var(--mono);
+    font-size: .68rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--label);
+  }
+  .chart-title span { color: var(--accent); }
+
+  .cursor-info {
+    font-family: var(--mono);
+    font-size: .68rem;
+    color: var(--label);
+    text-align: right;
+    min-width: 140px;
+  }
+  .cursor-info .ci-val { color: var(--text); }
+
+  canvas { display: block; }
+
+  .corner {
+    position: absolute;
+    width: 12px; height: 12px;
+    border-color: var(--accent);
+    border-style: solid;
+    opacity: .5;
+  }
+  .corner.tl { top: 8px; left: 8px; border-width: 1px 0 0 1px; }
+  .corner.tr { top: 8px; right: 8px; border-width: 1px 1px 0 0; }
+  .corner.bl { bottom: 8px; left: 8px; border-width: 0 0 1px 1px; }
+  .corner.br { bottom: 8px; right: 8px; border-width: 0 1px 1px 0; }
+
+  @media (max-width: 640px) {
+    .main { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Phase Current Calc</h1>
+</header>
+
+<div class="main">
+
+  <aside class="controls">
+    <div>
+      <div class="ctrl-section-label">Parameters</div>
+
+      <div class="field">
+        <label><span class="lname">DPC <span class="unit">A</span></span></label>
+        <input type="number" id="dpc" value="50" step="1">
+      </div>
+
+      <div class="field">
+        <label><span class="lname">Iq Limit <span class="unit">A</span></span></label>
+        <input type="number" id="iq-limit" value="60" min="20" max="100" step="1">
+      </div>
+
+      <div class="field">
+        <label><span class="lname">Accel Boost %</span></label>
+        <input type="number" id="accel-boost" value="20" min="0" max="150" step="1">
+        <input type="range" id="accel-boost-range" min="0" max="150" value="20" step="1">
+      </div>
+    </div>
+
+    <div>
+      <div class="field">
+        <label><span class="lname">Duty Cycle %</span></label>
+        <input type="number" id="dc-cursor" value="50" min="1" max="100" step="1">
+        <input type="range" id="dc-cursor-range" min="1" max="100" value="50" step="1">
+      </div>
+
+      <div class="readout">
+        <div class="readout-label">Phase Current</div>
+        <div class="readout-value" id="iq-readout">—</div>
+        <div class="readout-sub" id="iq-sub"></div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="chart-wrap">
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+    <div class="corner bl"></div>
+    <div class="corner br"></div>
+
+    <div class="chart-header">
+      <div class="chart-title">Iq vs <span>Duty Cycle</span></div>
+      <div class="cursor-info" id="cursor-info">DC: — &nbsp;|&nbsp; Iq: —</div>
+    </div>
+
+    <canvas id="chart" height="320"></canvas>
+  </div>
+
+</div>
+
+<script>
+function calcIq(dpc, dc, ab) {
+  if (dc <= 0 || dc > 100) return null;
+  const effective_ab = dc > 90 ? 0 : ab;
+  return (dpc + 3) * (100 + effective_ab) / dc;
+}
+
+const ctx = document.getElementById('chart').getContext('2d');
+
+const POINTS = 200;
+function buildLabels() {
+  const arr = [];
+  for (let i = 1; i <= 100; i += 100 / POINTS) arr.push(+i.toFixed(2));
+  arr.push(100);
+  return arr;
+}
+const labels = buildLabels();
+
+const chart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels,
+    datasets: [{
+      label: 'Iq',
+      data: [],
+      borderColor: '#00e5a0',
+      borderWidth: 2,
+      pointRadius: 0,
+      tension: 0.3,
+      fill: {
+        target: 'origin',
+        above: '#00e5a022'
+      }
+    }, {
+      label: 'Iq Limit',
+      data: [],
+      borderColor: '#ff4d4d',
+      borderWidth: 1.5,
+      borderDash: [6, 3],
+      pointRadius: 0,
+      fill: false
+    }, {
+      data: [],
+      borderColor: '#00aeff',
+      borderWidth: 1.5,
+      borderDash: [4, 4],
+      pointRadius: 0,
+      fill: false
+    }]
+  },
+  options: {
+    responsive: true,
+    animation: { duration: 120 },
+    interaction: { mode: 'index', intersect: false },
+    scales: {
+      x: {
+        type: 'linear',
+        min: 0, max: 100,
+        title: {
+          display: true,
+          text: 'Duty Cycle (%)',
+          color: '#5a6370',
+          font: { family: "'IBM Plex Mono'", size: 11 }
+        },
+        ticks: { color: '#5a6370', font: { family: "'IBM Plex Mono'", size: 10 }, maxTicksLimit: 11 },
+        grid: { color: '#1e2328' },
+        border: { color: '#1e2328' }
+      },
+      y: {
+        title: {
+          display: true,
+          text: 'Phase Current (A)',
+          color: '#5a6370',
+          font: { family: "'IBM Plex Mono'", size: 11 }
+        },
+        ticks: { color: '#5a6370', font: { family: "'IBM Plex Mono'", size: 10 }, maxTicksLimit: 8 },
+        grid: { color: '#1e2328' },
+        border: { color: '#1e2328' }
+      }
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#111417',
+        borderColor: '#1e2328',
+        borderWidth: 1,
+        titleColor: '#5a6370',
+        bodyColor: '#00e5a0',
+        titleFont: { family: "'IBM Plex Mono'" },
+        bodyFont: { family: "'IBM Plex Mono'" },
+        callbacks: {
+          title: items => `DC = ${(+items[0].label).toFixed(1)}%`,
+          label: item => item.datasetIndex === 0 ? `Iq = ${item.raw !== null ? item.raw.toFixed(3) + ' A' : '—'}` : null,
+          filter: item => item.datasetIndex === 0
+        }
+      }
+    }
+  }
+});
+
+function syncPair(numId, rangeId) {
+  const num = document.getElementById(numId);
+  const rng = document.getElementById(rangeId);
+  num.addEventListener('input', () => { rng.value = num.value; update(); });
+  rng.addEventListener('input', () => { num.value = rng.value; update(); });
+}
+syncPair('accel-boost', 'accel-boost-range');
+syncPair('dc-cursor', 'dc-cursor-range');
+document.getElementById('dpc').addEventListener('input', update);
+document.getElementById('iq-limit').addEventListener('input', update);
+
+function update() {
+  const dpc = Math.max(0, parseFloat(document.getElementById('dpc').value) || 0);
+  const ab  = Math.max(0, parseFloat(document.getElementById('accel-boost').value) || 0);
+  const dc0 = Math.max(1, Math.min(100, parseFloat(document.getElementById('dc-cursor').value) || 50));
+  const iqLimit = Math.max(10, parseFloat(document.getElementById('iq-limit').value) || 60);
+
+  const curveData = labels.map(dc => {
+    const v = calcIq(dpc, dc, ab);
+    if (v === null) return null;
+    return { x: dc, y: Math.min(v, iqLimit) };
+  }).filter(Boolean);
+
+  const limitLine = [{ x: 0, y: iqLimit }, { x: 100, y: iqLimit }];
+
+  const iqRaw = calcIq(dpc, dc0, ab);
+  const iqAtCursor = iqRaw !== null ? Math.min(iqRaw, iqLimit) : null;
+  const yMax = curveData.length ? Math.max(...curveData.map(p => p.y)) : iqLimit;
+  const cursorLine = iqAtCursor !== null ? [
+    { x: dc0, y: 0 },
+    { x: dc0, y: yMax * 1.05 }
+  ] : [];
+
+  chart.data.datasets[0].data = curveData;
+  chart.data.datasets[1].data = limitLine;
+  chart.data.datasets[2].data = cursorLine;
+  chart.update('none');
+
+  if (iqAtCursor !== null) {
+    document.getElementById('iq-readout').textContent = iqAtCursor.toFixed(3) + ' A';
+    document.getElementById('iq-sub').textContent = `DC = ${dc0}%`;
+    document.getElementById('cursor-info').innerHTML =
+      `DC: <span class="ci-val">${dc0}%</span> &nbsp;|&nbsp; Phase Current: <span class="ci-val">${iqAtCursor.toFixed(3)} A</span>`;
+  }
+}
+
+update();
+</script>
+</body>
+</html>
