@@ -110,7 +110,7 @@ Please be aware that the information provided below is intended for practical us
    - Configure the other modes as desired, lower current than sport for less acceleration.
    - Keep the speed limit to off / 0.
    - Acceleration boost, adjust by feel. Reduce if system shuts off.
-   - Brake curve, increase if weak. 30A is moderate.
+   - Brake curve, increase if weak. 58A is stock.
    - Brake boost, adjust by feel.
    - Overmodulation on for sport/drive, efficient speed increase by 10% or less.
    - Keep Iq and Id default limits and enable automatic field weakening for sport mode.
@@ -123,7 +123,7 @@ Please be aware that the information provided below is intended for practical us
    - Configure the other modes as desired, lower current than sport for less acceleration.
    - Keep the speed limit to off / 0.
    - Acceleration boost, adjust by feel. Reduce if system shuts off.
-   - Brake curve, increase if weak. 30A is moderate.
+   - Brake curve, increase if weak. 58A is stock.
    - Brake boost, adjust by feel.
    - Overmodulation on for sport/drive, efficient speed increase by 10% or less.
    - Keep Iq and Id default limits and enable automatic field weakening for sport mode.
@@ -138,7 +138,7 @@ For Xiaomi Essential/Lite, use these configurations:
    - Configure the other modes as desired, lower current than sport for less acceleration.
    - Keep the speed limit to off / 0.
    - Acceleration boost, adjust by feel. Reduce if system shuts off.
-   - Brake curve, increase if weak. 30A is moderate.
+   - Brake curve, increase if weak. 58A is stock.
    - Brake boost, adjust by feel.
    - Overmodulation on for sport/drive, efficient speed increase by 10% or less.
    - Keep Iq and Id default limits and enable automatic field weakening for sport mode.
